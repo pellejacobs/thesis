@@ -1,8 +1,9 @@
-layout: center
+class: center, middle
 # Feasibility of blockchain application as medium for collaborative systems or databases
 
-Thesis introduction by Pelle Jacobs
-Promoted by prof. Jochem De Weerdt and Vytautas Karalevicius
+Thesis introduction by Pelle Jacobs, October 21, 2016
+
+Promoted by prof. Jochem De Weerdt, supervised by Vytautas Karalevicius
 
 ---
 
@@ -15,8 +16,7 @@ Promoted by prof. Jochem De Weerdt and Vytautas Karalevicius
 - In which cases would the use of blockchain be an advantage over the current solutions for collaborative databases? Setup a thinking **framework to evaluate blockchain feasibility on specific issues**.
 
 ---
-
-layout: center
+class: center, middle
 
 ## What is this blockchain you are talking about?
 
@@ -24,13 +24,15 @@ layout: center
 
 ## What is blockchain?
 
-"Chain of blocks"? However, even over this definition, there is no real consensus, as often distributed ledger technologies are all being marked as blockchain.
+####.center[_"Chain of blocks"_]
+
+However, even over this definition, there is no real consensus, as often all Distributed Ledger Technologies are being marked as Blockchain®.
 
 Purpose of this part in the paper:
 
-- solidly define the concept of blockchain, differentiating it from the more general concept of "Distributed Ledger Technology", to avoid any misunderstanding in the rest of the thesis.
-- clearly explain what the idea of blockchain concludes. How are blockchains set up, how can they be used? _eg. public vs private blockchain, permissioned vs unpermissioned, proof of work vs proof of stake, monetary transactions vs non-monetary, data transactions, smart contracts, etc._
-- what are the advantages and disadvantages of implementing a collaborative database based on a blockchain
+- solidly **define the concept of blockchain**, differentiating it from the more general concept of "Distributed Ledger Technology", to avoid any misunderstanding in the rest of the thesis.
+- clearly explain what the **idea of blockchain concludes**. How are blockchains set up, how can they be used? _eg. public vs private blockchain, permissioned vs unpermissioned, proof of work vs proof of stake, monetary transactions vs non-monetary, data transactions, smart contracts, etc._
+- what are the **advantages and disadvantages** of implementing a collaborative database based on a blockchain
 
 ---
 
