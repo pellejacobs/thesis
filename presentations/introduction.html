@@ -142,21 +142,40 @@
 
     Promoted by prof. Jochem De Weerdt and supervised by Vytautas Karalevicius
 
+
+    ???
+
+    - welcome
+    - personal presentation
+    - purpose of presentation: give an outline of the my planned research: **what will I be doing and how**
+    - there will be time for questions at the end, but I'd be happy to answer and urgent unclarities during the presentation as well.
+
     ---
 
     # Structure of the thesis
 
-    - What exactly do we **define as blockchain** and how does that work? What are other implementations of distributed ledger technology? What are the possibilities, advantages and disadvantages of blockchain?
+    - What exactly do we **define as blockchain** and how does it work? What are other implementations of distributed ledger technology? What are the possibilities, advantages and disadvantages of blockchain?
 
     - **Collaborative systems and databases**: what are distributed databases and decentralized databases, current issues and how are these issues currently dealt with.
 
     - What are the use cases for blockchain over the current solutions for collaborative databases? Setup a thinking **framework to evaluate blockchain feasibility on specific issues**.
+
+    ???
+
+    - split up in 3 parts:
+    - *first two parts will research in depth the two main components of the research question*
+    - _to slides_
+    - *in the final part, there will be a synthesis of the previous two*
 
     ---
 
     class: center, middle, inverse
 
     ## 1. What is this blockchain you are talking about?
+
+    ???
+
+    *A pretty important question to get right, however, not everyone agrees*
 
     ---
     .footnote[1\. What is blockchain]
@@ -170,10 +189,18 @@
     Purpose of this part in the paper:
 
     - solidly **define the concept of blockchain**, differentiating it from the more general concept of "Distributed Ledger Technology", to avoid any misunderstanding in the rest of the thesis.
-    - clearly explain what the **idea of blockchain concludes**. How are blockchains set up, how can they be used?
+    - clearly explain what the **idea of blockchain includes**. How are blockchains set up, how can they be used?
 
-    _eg. public vs private blockchain, permissioned vs unpermissioned, proof of work vs proof of stake, monetary transactions vs non-monetary transactions, smart contracts, etc._
+      _eg. public vs private blockchain, permissioned vs unpermissioned, proof of work vs proof of stake, monetary transactions vs non-monetary transactions, smart contracts, etc._
     - what are the **advantages and disadvantages** of implementing a collaborative database based on a blockchain
+
+    ???
+
+    - "one could argue that a blockchain is a chain of blocks. Which, despite its obvious simplicity, is actually a pretty good definition"
+    - _slide_
+    - first of all: define the context for this paper
+    - only then: define specifics of blockchains
+    - finally: first analysis of ... _to slide_
 
     ---
 
@@ -186,6 +213,10 @@
     - S. Nakamoto, "Bitcoin: A Peer-to-Peer Electronic Cash System", 2008
     - A. M. Antonopoulos, "Mastering Bitcoin", 2015
 
+    ???
+
+    literally slide..
+
     ---
     class: center, middle, inverse
 
@@ -194,6 +225,18 @@
     ![centralized-v-decentralized-v-distributed](./images/networktypes.jpg)
 
     (P. Baran, "On Distributed Communication Networks", 1964)
+
+    ???
+
+    So Baran, in 1964, had already a pretty interesting view on different types of networks, and I will be porting his definitions to the context of collaborative databases.
+
+    - centralized databases: one single database center with the source of truth, to which all leafs / stations connect
+    - decentralize db: multiple db centers that constantly communicate with each other to determine what is the source of truth, leafs connect to any one of these to get the data
+    - distributed db: all leafs will hold all the data, and come to consensus with each other as to what is the truth
+
+    => as decentralized and distributed have most challenges: focus on these
+
+
 
     ---
 
@@ -219,6 +262,13 @@
     => need for consensus, eg. Bitcoin
     ]
 
+    ???
+    this part will have a similar setup as the part about blockchain:
+    - definition,
+    - deeper dive into issues,
+    - ending with current solutions
+
+    Let's start with first part, as definition might here be even more important than in blockchain part.
 
     ---
 
@@ -236,7 +286,12 @@
     - **structure**: complex databases result in complex and unwieldy structures
     - **integrity and authenticity**: how do we make sure the data is the database is actually correct and authentic? How do we make sure no data disappears or gets maliciously altered?
 
-    Further, we will have a look a the current solutions for these issues and how they hold up. eg. Facebook's Cassandra
+    Finally, we will have a look a the current solutions for these issues and how they hold up. eg. Facebook's Cassandra
+
+    ???
+    next: what are issues with these dbs?
+
+    finally: let's look into some current solutions
 
     ---
 
@@ -246,6 +301,14 @@
 
     ![blockchain-usage-flowchart](./images/blockchain-flow.png)
     (B. Suichies, "Why Blockchain must die in 2016", 2015)
+
+    ???
+
+    in the final part, I will formulate a framework to answer the question 'should we use blockchain for this issue, or rather sth else?'
+
+    Here is an example of a flowchart that achieves a similar purpose, taken from an article called "blockchain must die".
+
+    => this title nicely sums up the general state of the community: either aboard the hype train or bc will crash and burn
 
     ---
 
@@ -262,6 +325,18 @@
     A popular hypothesis I am looking forward to evaluating:
 
     _"The true power of blockchain lies in new issues that haven't been solved yet, instead of trying to replace current working solutions"_
+
+    ???
+
+    so concretely, I will be combining potential of bc with shortcomings of cb dbs
+
+    setup framework
+
+    finally, test by applying to real world examples
+
+    sidenote, an interesting, widespread hypothesis: _slide_
+
+    => analogy with the emergence of the internet is striking: although several companies tried in 2000s to make existing concepts work on the Internet, growth was mostly driving by hype. The real emeregences came eg. when a student at Harvard decided it sounded fun to have all his peer connected on one single website, which was completely impossible before the Internet
 
     ---
 
