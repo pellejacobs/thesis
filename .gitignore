@@ -1,2 +1,9 @@
 documentation
 metadocs
+
+# tex output files
+*.aux
+*.idx
+*.log
+*.pdf
+*.toc
