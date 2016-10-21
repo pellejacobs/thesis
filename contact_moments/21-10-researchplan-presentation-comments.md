@@ -25,8 +25,11 @@ we discussed interesting potential of other blockchain applications, focussing o
 **prof. De Weerdt:**
 
 - in part 1 and part 2, focus on literature is essential
+  
+  => eg. when trying to define blockchain, go as deep as possible eg. by defining what a block is
 - don't forget references! both on the slides, as in the research plan itself:
 
-  => keep a record of ALL potential / used references, differentiating 'trusted' (books, articles, papers) and 'untrusted' (eg. online blogposts)
+  => keep a record of ALL potential / used references, differentiating 'trusted' (books, articles, papers) and 'untrusted' (eg. online blogposts). Note: if some sources are actually very important to the thesis, consider even writing a paragraph on the background / trustability of this source.
+  
 
 - be careful with too much info / sentences on a slides, distracts the audience from listening to the presentation as they are reading the slides.
