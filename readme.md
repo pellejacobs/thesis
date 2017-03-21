@@ -13,10 +13,10 @@
     - [ ] proof of stake: ??? 
   - [ ] monetary and non-monetary transactions: 
     - [ ] monetary is straightforward simple bitcoin
-    - [ ] non-monetary: ???? no readings yet 😒
-  - [ ] smart contracts => ?? related to non-monetary transactions? 
+    - [ ] non-monetary: ???? no readings yet 😒
+  - [ ] smart contracts => ?? related to non-monetary transactions?
   - [ ] different implementations of blockchains: compare bitcoin blockchain with ethereum (for public blockchains), private blockchains? 
-  - [ ] advantages of having a collaborative database on a blockchain: Nakamoto paper touches this briefly in the introduction
+  - [ ] advantages of having a collaborative database on a blockchain: Nakamoto paper touches this briefly in the introduction
 
 2. What are distributed and decentralised databases
   - [ ] 'distributed' and 'decentralised' as concepts and usefulness: Baran paper
