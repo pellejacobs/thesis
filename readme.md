@@ -6,12 +6,13 @@
 
 **bitcoin**
 
-- [ ] S. Nakamoto, "Bitcoin: A Peer-to-Peer Electronic Cash System", 2008
-- [ ] A. M. Antonopoulos, "Mastering Bitcoin", 2015
+- [x] S. Nakamoto, "Bitcoin: A Peer-to-Peer Electronic Cash System", 2008
+- [ ] A. M. Antonopoulos, "Mastering Bitcoin", 2015: 
+  - [x] C7: Blockchain
 
 **collaborative dbs**
 
-- [ ] P. Baran, "On Distributed Communication Networks", 1964
+- [x] P. Baran, "On Distributed Communication Networks", 1964
 
 ### webmaterial
 
