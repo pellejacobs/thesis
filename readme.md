@@ -7,23 +7,24 @@
   - [ ] private vs public blockchain:
     - [ ] public: just a description of the general bitcoin blockchain: C7 from 'mastering bitcoin'
     - [ ] private: ??? => no examples yet of private blockchains
-  - [ ] permissioned vs unpermissioned: ?? what is exactly the difference with public / private?
-  - [ ] proof of work vs proof of stake: 
-    - [ ] proof of work: easy description of bitcoin mining: Nakamoto paper 
-    - [ ] proof of stake: ??? 
-  - [ ] monetary and non-monetary transactions: 
+  - [ ] permissioned vs unpermissioned: ?? what is exactly the difference with public / private? (=> joining vs not allowed to join)
+  - [ ] proof of work vs proof of stake:
+    - [ ] proof of work: easy description of bitcoin mining: Nakamoto paper
+    - [ ] proof of stake: dash masternodes instant send
+    - [ ] proof of storage: maybe?
+  - [ ] monetary and non-monetary transactions:
     - [ ] monetary is straightforward simple bitcoin
     - [ ] non-monetary: ???? no readings yet 😒
   - [ ] smart contracts => ?? related to non-monetary transactions?
-  - [ ] different implementations of blockchains: compare bitcoin blockchain with ethereum (for public blockchains), private blockchains? 
+  - [ ] different implementations of blockchains: compare bitcoin blockchain with ethereum (for public blockchains), private blockchains?  ???
   - [ ] advantages of having a collaborative database on a blockchain: Nakamoto paper touches this briefly in the introduction
 
 2. What are distributed and decentralised databases
   - [ ] 'distributed' and 'decentralised' as concepts and usefulness: Baran paper
-  - [ ] common distributed / decentralised databases => cassandra? 
-  - [ ] applications of these databases => facebook? 
+  - [ ] common distributed / decentralised databases => cassandra?
+  - [ ] applications of these databases => facebook?
 
-3. Evaluation flowchart
+3. Evaluation flowchart => more evaluation instead
 
 
 ## Reading list:
@@ -33,7 +34,7 @@
 **bitcoin**
 
 - [x] S. Nakamoto, "Bitcoin: A Peer-to-Peer Electronic Cash System", 2008
-- [ ] A. M. Antonopoulos, "Mastering Bitcoin", 2015: 
+- [ ] A. M. Antonopoulos, "Mastering Bitcoin", 2015:
   - [x] C7: Blockchain
 
 **collaborative dbs**
@@ -50,6 +51,3 @@
 also interesting:
 
 - other posts at http://www.multichain.com/blog/category/private-blockchains/
-
-
-
