@@ -4,20 +4,21 @@
 
 1. What is blockchain
   - [ ] pure definition: C7 from 'mastering bitcoin'
-  - [ ] private vs public blockchain:
-    - [ ] public: just a description of the general bitcoin blockchain: C7 from 'mastering bitcoin'
-    - [ ] private: ??? => no examples yet of private blockchains
-  - [ ] permissioned vs unpermissioned: ?? what is exactly the difference with public / private? (=> joining vs not allowed to join)
-  - [ ] proof of work vs proof of stake:
-    - [ ] proof of work: easy description of bitcoin mining: Nakamoto paper
-    - [ ] proof of stake: dash masternodes instant send
-    - [ ] proof of storage: maybe?
-  - [ ] monetary and non-monetary transactions:
-    - [ ] monetary is straightforward simple bitcoin
-    - [ ] non-monetary: ???? no readings yet 😒
-  - [ ] smart contracts => ?? related to non-monetary transactions?
-  - [ ] different implementations of blockchains: compare bitcoin blockchain with ethereum (for public blockchains), private blockchains?  ???
+    - [x] monetary and non-monetary transactions:
+      - [ ] monetary is straightforward simple bitcoin
+      - [ ] non-monetary: ???? no readings yet 😒
+  - [ ] Characteristics of blockchains
+    - [ ] private vs public blockchain:
+      - [ ] public: just a description of the general bitcoin blockchain: C7 from 'mastering bitcoin'
+      - [ ] private: ??? => no examples yet of private blockchains
+    - [ ] permissioned vs unpermissioned: ?? what is exactly the difference with public / private? (=> joining vs not allowed to join)
+    - [ ] proof of work vs proof of stake:
+      - [ ] proof of work: easy description of bitcoin mining: Nakamoto paper
+      - [ ] proof of stake: dash masternodes instant send
+      - [ ] proof of storage: maybe?
+    - [ ] smart contracts => ?? related to non-monetary transactions?
   - [ ] advantages of having a collaborative database on a blockchain: Nakamoto paper touches this briefly in the introduction
+  - [ ] different implementations of blockchains: compare bitcoin blockchain with ethereum (for public blockchains), private blockchains?  ???
 
 2. What are distributed and decentralised databases
   - [ ] 'distributed' and 'decentralised' as concepts and usefulness: Baran paper
