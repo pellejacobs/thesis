@@ -34,3 +34,13 @@ pools:
   - managed
   - P2Pool
 => consensus attacks
+
+## C9 Alt coins / chains
+
+mostly a quick overview of existing alt coins and alt chains: 
+
+- alt coins: currencies based on the blockchain protocol (either directly using the bitcoin blockchain, the bitcoin code or a self-developed blockchain). eg:
+  - colored coins: adding a tag to certain small amounts of bitcoin
+  - mastercoin: platform to develop own currency
+  - ...
+- alt chains: blockchain based for non-currency focus: namecoin, bitmessage, ethereum 
