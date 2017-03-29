@@ -1,6 +1,8 @@
 # Master Thesis Pelle Jacobs
 
-## Paper structure
+## Last paper structure
+
+## First Paper structure
 
 1. What is blockchain
   - [ ] pure definition: C7 from 'mastering bitcoin'
