@@ -19,7 +19,7 @@
     - examples of distributed networks and databases and how they achieve consensus: 
         + torrents: easy: only one version of the data is ever shared, never updated
         + git: use of master branch and "data edit powers" to update merge conflicts (= consensus issues)
-        + cassandra: I think this might be an interesting use case as it is also a mesh of nodes try to achieve consensus / synchronise between each other
+        + ~~cassandra: I think this might be an interesting use case as it is also a mesh of nodes try to achieve consensus / synchronise between each other~~ (on second notice => leave this one out: this is an example of a DECENTRALISED DB)
         + distributed peer to peer networks such as the internet and open bazaar: nothing is stored, no persistence,
 3. aim of the research: how can the idea to replace the middle man by technology be applied when dealing with distributed databases?
     - can this idea be applied to actually storing the data: what would this mean? What would the consequences / resulting situation be? what would the advantages be? what are some possible applications if this would be possible? 
