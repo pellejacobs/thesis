@@ -8,7 +8,9 @@
     - innovation of bitcoin: replace middleman with technology, specifically for bitcoin this is the blockchain:
         - public-private key cryptography: public-private key cryptography is central to understand the innovations bitcoin uses to revolutionise
         - definition of blockchain: carefully explain every aspect of the definition as provided by Antonopoulos
-        - characteristics of blockchains:
+        - Extra chapter: how does a minimal blockchain work? which interesting characteristics are created? 
+        - ~~characteristics~~ properties of blockchains:
+            - in intro: start out with the specific advantages that a blockchain provide
             - consensus mechanisms for blockchains: proof of work, proof of stake,
             - who can access the data: private or public
             - who is allowed to accept new transactions: permissioned or unpermissioned
