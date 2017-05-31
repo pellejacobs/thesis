@@ -1,0 +1,123 @@
+\documentclass[11pt,a4paper]{book}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{picture}
+\usepackage{color}
+\usepackage{graphpap,color}
+\usepackage{subfig}
+\usepackage[percent]{overpic}
+
+\usepackage[english]{babel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\definecolor{kuleuven}{RGB}{29,141,176}
+\definecolor{kuleuven1}{RGB}{82,189,236}
+\usepackage{geometry}
+
+% CUSTOMIZATIONS
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+
+\makeindex
+\begin{document}
+
+\frontmatter
+\newgeometry{textwidth=540pt,textheight=780pt,top=20pt,left=20pt,right=20pt}
+\begin{titlepage}
+
+\begin{figure}[t]{%
+      \begin{overpic}[width=1\textwidth,natwidth=50,natheight=0]{./template_images/Picture1.png}
+        \put(46,4){\color{white}\large{\textbf{FACULTY OF ECONOMICS AND BUSINESS}}}
+      \end{overpic}
+    }
+\end{figure}
+
+\vspace*{4.5cm}
+{\color{kuleuven1}{\Huge  Feasibility of blockchain application \\as medium for collaborative systems or databases}}
+
+\vspace*{0.5cm}
+{\Large Subtitle}
+
+\begin{figure}[b]
+  %\centering
+   \begin{minipage}[c]{0.4\textwidth}  {%
+      \begin{overpic}[width=0.9\textwidth,natwidth=300,natheight=370]{./template_images/Picture2.png}
+        \put(70,45){\begin{minipage}[c]{1.80\textwidth}
+\begin{flushright}
+
+{\Large Pelle Jacobs} \linebreak
+{r0364018} \linebreak
+
+\textbf{{\large Thesis submitted to obtain \linebreak
+the degree of}} \linebreak
+\linebreak
+{\large Masters in Information Systems Engineering}\linebreak
+{\large Majoring in Data Science}\linebreak
+\linebreak
+\textbf{{\large Promotor:}}   Prof. Dr. Jochen De Weerdt \linebreak
+\textbf{{\large Assistant:}} Vytautas Karalevicius
+\linebreak
+
+\textbf{{\large Academic year:}} {\large 2016-2017}
+\linebreak
+\end{flushright}
+  \end{minipage}}
+      \end{overpic}
+    }
+  \end{minipage}
+
+
+\begin{picture}(540,0.2)
+\put(0,0){\colorbox{kuleuven1}{\makebox(540,0.2){}}}
+\end{picture}
+\end{figure}
+
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\restoregeometry
+\setcounter{equation}{1}
+
+\pagestyle{empty}
+\tableofcontents
+
+\input{preface}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+
+\pagestyle{headings}
+
+\input{orphaned}
+
+\input{chapter1}
+
+%  BIBLIOGRAPHY
+\input{./bibliography}
+
+\vfill
+
+\appendix
+\tocless \chapter{}
+\addcontentsline{toc}{chapter}{Appendix}
+\input{./appendix}
+
+\newpage
+\thispagestyle{empty}
+\newgeometry{textwidth=540pt,textheight=780pt,top=20pt,left=20pt,right=20pt}
+\begin{figure}[ht]
+\begin{flushright}
+\includegraphics[width=0.5\textwidth,natwidth=310,natheight=10]{./template_images/Picture3.png}
+\end{flushright}
+\end{figure}
+\vfill
+\begin{picture}(550,40)
+\put(0,0){\colorbox{kuleuven}{\makebox(520,52){}}}
+\end{picture}
+\end{document}
