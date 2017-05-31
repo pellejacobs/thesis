@@ -18,6 +18,7 @@
     - distributed databases:
         - difference between the terms distributed, decentralized and centralized
         - advantages and trade offs of using a distributed databases compared to a fully centralised db or decentralized db
+    - seemingly distributed systems but not actually (ripple, que mas?, cassandra? )
     - examples of distributed networks and databases and how they achieve consensus: 
         + torrents: easy: only one version of the data is ever shared, never updated
         + git: use of master branch and "data edit powers" to update merge conflicts (= consensus issues)
