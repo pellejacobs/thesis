@@ -8,3 +8,4 @@ metadocs
 *.pdf
 *.toc
 *.out
+!paper/template.pdf
