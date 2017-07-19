@@ -1,16 +1,16 @@
 \section{Public key cryptography}
 
-Public key cryptography is the backbone of most distributed systems as it provides both a way to encrypt a message as to validate the source of a message, without the need to agree upon a shared key. The most used implementation of this idea is the RSA encryption method, named after inventors Rivest, Shamir and Adleman \cite{rsa-patent}. 
+Public key cryptography is the backbone of most distributed systems as it provides both a way to encrypt a message as well as to validate the source of a message, without the need to agree upon a shared key. The most used implementation of this idea is the RSA encryption method, named after inventors Rivest, Shamir and Adleman \cite{rsa-patent}. 
 
 \subsection{Basics}
 
 In previous encryption systems before the public key cryptography, two parties who wanted to safely exchange messages needed to agree on a common cypher first. One of the more famous of such encryption systems is the Ceasar cypher \cite{ceasar-cypher}, in which the cypher consisted of offsetting every character with a previously agreed upon number. However, if a third party manages to intercept transmission of this cypher itself, all encrypted messages can easily be decoded. Therefore, a trusted third party network is needed to securely exchange the cypher.
 
-Public key cryptography uses a pair of hashes instead. These hashes are often referred to as the keys. These hashes are algorithmically generated so that they are cryptographically connected: data encrypted with one key can only be decrypted with the other key and visa versa \cite{rsa-paper-explanation}.
+Public key cryptography uses a pair of hashes instead. These hashes are often referred to as the keys. These hashes are algorithmically generated so that they are cryptographically connected: data encrypted with one key can only be decrypted with the other key and vice versa \cite{rsa-paper-explanation}.
 
 One of these keys can be publicly broadcasted. As a result, everyone knows that this key is connected to the owner's identity. Therefore, it is referred to as the public key.
 
-The other key will be held privately. It is very important that nobody except the owner know the content of this key, as it will be used to prove the owner's identity. It is therefore referred to as the private key.
+The other key will be held privately. It is very important that nobody except the owner knows the content of this key, as it will be used to prove the owner's identity. It is therefore referred to as the private key.
 
 Because no cypher has to be exchanged, there is no need for the trusted middleman to exchange the cypher, eliminating a key weakness of cypher encryption.
 
