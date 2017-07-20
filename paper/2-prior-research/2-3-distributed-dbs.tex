@@ -1,14 +1,38 @@
 \section{Distributed databases}
 
+\subsection{Distributed, decentralized and centralized databases}
+
 \iffalse
-important ideas: 
-- maybe add a section about database properties in general (CAP theorm) and the blockchain aspect of it (one of the papers mentions this, I think Bitfury)
+- to fully comprehend distributed databases, we have to distinguish them from decentralized and centralized databases. baran 1964: in context of networks: distributed vs centralized and decentralized in between
+- apply this definition to databases: add examples: one single database: standard example, decentralized: cloudfront CDN by amazon, distributed: bittorrent
 \fi
 
-\subsection{Distributed, decentralized and centralized databases}
+=
+
+\subsection{Advantages of using a blockchain as a distributed database}
+\iffalse
+- CAP Theorem
+ => maybe add a section about database properties in general (CAP theorm) and the blockchain aspect of it (one of the papers mentions this, I think Bitfury)
+- general advantages of blockchains as a database: consistency and consensus 
+- disadvantages of blockchains: latency and scalability
+\fi
 
 \subsection{Examples of distributed databases and networks}
 
+% how does every example do on the CAP theorm, what are other disadvantages
+
 \subsubsection{Git}
+
+% no authority, consensus not automatic => danger for malicious agents
+
 \subsubsection{BitTorrent}
+
+% no update to data
+
 \subsubsection{Non-persistent P2P networks}
+
+\iffalse
+- no cap applicable, as not a database
+- examples: open bazaar.
+\fi
+
