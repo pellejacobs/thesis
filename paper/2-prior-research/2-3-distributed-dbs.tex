@@ -1,4 +1,5 @@
 \section{Distributed databases}
+\label{sec:distributed-dbs}
 
 \subsection{Distributed, decentralized and centralized databases}
 
@@ -33,18 +34,20 @@ To avoid the consistency issue, a distributed database can force all nodes to up
 
 The CAP theorem (Consistency, Availability, and Partition-resilience) states that any network can choose two out of three characteristics. The theorem was first proposed by Fox and Brewer (1999). It was formally proven by Gilbert and Lynch (2002) \cite{gilbert-lynch-cap-proof}.
 
-
-\subsection{Examples of distributed databases and networks used in collaborative systems}
-
-% how does every example do on the CAP theorem, what are other disadvantages
-
-This final part of the chapter discusses several common implementations of distributed databases and networks in the context of collaborative systems. 
+\subsection{Issues with distributed databases in collaborative systems}
+\label{subsec:issues-distributed-dbs}
 
 In a guided system, there is one authoritative entity controlling every node in the network. But in a collaborative system, separate agents with individual incentives have to work together. This creates a whole new set of challenges, namely consensus and consistency issues.
 
 Consensus issues arise when the database has been updated on two different nodes at the same time. Somehow, these two conflicting versions have to be merged. % For example, Alice spends a cryptocurrency coin to buy something from Bob. But at the same time, she uses this same coin to buy something from Claire. etc etc
 
 Consistency issues emerge when the agreed upon the past can be changed. For example, Alice wants to spend a cryptocurrency coin. The merchant makes sure that the coin is valid and approves the purchase. But when consistency is not properly enforced, Alice can go into the database and manually remove the transaction. This nullifies the transaction, allowing Alice to spend the coin again. It is important to note that this idea of consistency is not related to the consistency representing the C in the CAP theorem.
+
+\subsection{Examples of distributed databases and networks used in collaborative systems}
+\ref{subsec:examples-distributed-dbs}
+% how does every example do on the CAP theorem, what are other disadvantages
+
+This final part of the chapter discusses several common implementations of distributed databases and networks in the context of collaborative systems. 
 
 \subsubsection{Git version control}
 
@@ -62,7 +65,7 @@ Git includes a specialized algorithm to automatically merge new changes into the
 
 Consistency is not enforced in git. This means that any developer can manipulate the history of changes. This is useful when for example a large file has accidentally been included into the project. This bloats the size of the project and hampers collaboration. Simply removing the file does not help, as the file will still be part of the code history. To completely get rid of this file, the original inclusion has to be nullified. However, this could be used for malicious practices as well. Imagine a problem arises because of a programming mistake made some weeks ago. In case the developer does not want to be held accountable, he could remove his change from the history. Or he could even change the author of the change to someone else \cite{change-author-commit}.
 
-It is clear that the git system needs trust between the developers. But in certain projects, there is no trust. For example, in open source projects, any developer can propose code changes. This is why on hosting sites for git repositories, such as Github, authorized users need to approve a code change before it can be added to the main code base \cite{github-pr}. 
+It is clear that the git system needs trust between the developers. But in certain projects, there is no trust. For example, in open source projects, any developer can propose code changes. This is why on hosting sites for git repositories, such as Github, authorized users need to approve a code change before it can be added to the main code base \cite{github-pr}. But this partially removes the distributed character of git.
 
 Considering the CAP theorem, it is clear git is available and partition-resilient, but not consistent. A node can always download a version of the code base, either from the main server or from one of its colleagues. This makes git available. If a node goes offline, a developer can contact any other developer for the full code base, making git partition-resilient. However, as every developer has a slightly different code base because of his own changes, git will never be consistent.
 
@@ -73,6 +76,7 @@ BitTorrent is a peer-to-peer file distribution system. Instead of downloading a 
 As there are no updates to a BitTorrent file, consensus and consistency are not an issue. Also, the CAP theorem is not relevant in this writeless context. BitTorrent is consistent, available and partition-resilient.
 
 \subsubsection{Blockchain}
+\label{subsubsec:blockchain-as-distributed-dbs}
 \iffalse
 - CAP Theorem
  => maybe add a section about database properties in general (CAP theorem) and the blockchain aspect of it (one of the papers mentions this, I think Bitfury)
