@@ -16,11 +16,11 @@ intro:
 
 ### proof of work
 
-todo
+~todo~
 
 ### proof of stake
 
-todo
+~todo~
 
 ## Access to the blockchain data: 
 
