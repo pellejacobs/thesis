@@ -10,27 +10,27 @@ todo:
 
 In the last few years, the blockchain as a concept has been given a wide range of meanings and definitions. Some explain the blockchain as a history of events, some focus on blockchain as a bitcoin transaction ledger and some talk about the open decentralized database aspect of blockchains \cite{blockchain-multiple-definitions}. Therefore, this section starts by defining this concept, to avoid any misunderstanding or confusion further on.
 
-Antonopoulos (2014) \cite{antonopoulos:2014} defines the blockchain as follows: ``The blockchain data structure is an ordered, back-linked list of blocks and transactions.'' (p. 159). There are several aspects in this definition that need further explanation.
+This thesis will use the blockchain definition as defined by Antonopoulos (2014) \cite{antonopoulos:2014}: ``The blockchain data structure is an ordered, back-linked list of blocks and transactions.'' (p. 159). There are several aspects in this definition that need further explanation.
 
 \subsubsection{Back-linked lists as data structure}
 
-First of all, we are talking about a data structure: ``A specialized format for organizing and storing data'' \cite{data-structure}. There are several types of data structures such as arrays, lists, graphs, trees, etc.
+First of all, a data structure is a ``specialized format for organizing and storing data'' (Rouse 2006 \cite{data-structure}). There are several types of data structures such as arrays, lists, graphs and trees.
 
-Next, a blockchain is a specialized version of an ``ordered, back-linked list''. A list is a data structure that combines a number of ordered values (Abelson 1996 \cite{abelson:1996}).  Incidentally, the ``ordered'' in the definition provided by Antonopoulos is superfluous, as by definition every list is ordered. An unordered list would no longer be a list but would be a set instead. A blockchain will use back-linking to preserve the order of the values. This means that all values have a reference to the previous value in the list. For a blockchain, this means that every block in the blockchain contains an identification of the previous block.
+Next, a blockchain is a specialized version of an ``ordered, back-linked list''. A list is a data structure that combines a number of ordered values (Abelson 1996 \cite{abelson:1996}). A blockchain will use back-linking to preserve the order of the values. This means that all values have a reference to the previous value in the list. For a blockchain, this means that every block in the blockchain contains an identification of the previous block.
 
 \subsubsection{Transactions}
 
-Antonopoulos (2014) \cite{antonopoulos:2014} defines transactions as: ``data structures that encode the transfer of value between participants in the bitcoin system'' (p. 109). Although it gives a good idea of what transactions are, even in the context of the bitcoin blockchain this definition is incomplete. Despite most transactions being value transactions between participants, a transaction can also store data on a blockchain. Even the bitcoin blockchain allows non-monetary transactions to be included.
+The second aspect of the definition mentions transactions. Transactions are the data objects that store information on the blockchain. There are two types of transactions: monetary transactions and non-monetary transactions.
 
-Hence, we can conclude that there are two types of transactions: monetary transactions and non-monetary transactions. In a monetary transaction, there is a transfer of value (eg. an amount of bitcoin) between participants. It must be noted that this does not have to be an instant transfer. Several blockchain protocols allow for a custom condition to be scripted into the transaction.
+In a monetary transaction, there is a transfer of value between participants, eg. an amount of bitcoin. The simplest monetary transaction transfers value from one account to another. However, several blockchains allow custom conditions to be scripted into the transactions. These conditions can be used to imitate for example a crop insurance contract. In this situation, the transaction would only execute if at the recipient experiences a drought. Transactions with such a custom condition are often referred to as ``smart contracts'' \cite{ethereum-whitepaper}.
 
 On the other side, there are non-monetary transactions that store data onto the blockchain. An example is the storage of the fingerprint of a document on the blockchain.
 
-Transactions are the raison d'\^{e}tre of the blockchain. Everything discussed in this chapter exists to make sure that transactions can be validated, propagated over the network and added to a distributed ledger.
+Transactions are the raison d'\^{e}tre of the blockchain. Blockchains are designed to make sure that transactions can be validated, propagated over the network and added to a distributed ledger.
 
 \subsubsection{Blocks}
 
-Antonopoulos (2014) \cite{antonopoulos:2014} defines a block as: ``a container data structure that aggregates transactions for inclusion in the public ledger, the blockchain.'' (p. 160). A block is a wrapper for transactions to make it possible for them to be included into the blockchain. These blocks form the ordered values of the back-linked list addressed in the beginning of this section, with each block linking to the previous block in the list.
+Every block in the blockchain includes several transactions. The blocks are wrappers for the transactions, so these transactions can be included into the blockchain. The blocks are the ordered values of the back-linked list addressed in the beginning of this section. Each block links to the previous block in the list. Blocks are ordered chronologically. Transactions stored in a previous block are executed before the transactions in a later block and all transactions in the same block are executed concurrently.
 
 To conclude, the blockchain is a list of blocks, with each block containing several transactions.
 
