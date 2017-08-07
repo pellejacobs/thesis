@@ -17,9 +17,9 @@ An obvious proposal is to store collaborative data directly onto a blockchain, f
 
 However, there are multiple issues with this approach. 
 
-First, it is not possible to change or remove data once it is stored onto the blockchain. To update a file, the user would have to upload the entire new file. Another option is to store just the changes to the original file onto the blockchain. In the this case, the application used to read the data from the blockchain would create the most recent version of the file based on the original file and the submitted changes. 
+First, it is not possible to change or remove data once it is stored onto the blockchain. To update a file, the user would have to upload the entire new file. Another option is to store just the changes to the original file onto the blockchain. In this case, the application used to read the data from the blockchain would create the most recent version of the file based on the original file and the submitted changes. 
 
-Secondly, blockchains' characteristics such as low scalability, high latency and potential privacy concerns make them useless for most centralized database applications. These issues have been thoroughly discussed in section \ref{subsubsec:blockchain-as-distributed-dbs}.
+Secondly, blockchains' characteristics such as low scalability, high latency, and potential privacy concerns make them useless for most centralized database applications. These issues have been thoroughly discussed in section \ref{subsubsec:blockchain-as-distributed-dbs}.
 
 Finally, storing data onto a blockchain is very expensive because of its low scalability. Considering the bitcoin blockchain, every byte of storage costs 0.0000026 BTC\cite{bitcoin-transaction-fee}. At a current market cap of €2418.09 per BTC, 1 KB costs €6.44. \cite{bitcoin-market-cap}.
 
@@ -31,4 +31,4 @@ Finally, storing data onto a blockchain is very expensive because of its low sca
 
 On the other hand, solving the issues consistency and consensus are the main selling point of blockchains but are not seen as issues in a context of centralized databases. On the contrary, enforced consistency could be a problem for certain applications that require delete functionality.
 
-Because of these reasons, it is clear that blockchains not a viable instrument to store normal amounts of data directly.
+Because of these reasons, it is clear that blockchains are not a viable instrument to store normal amounts of data directly.

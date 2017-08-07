@@ -1,2 +1,63 @@
-\section{Applied example: replacing notary will services}
+\section{Applied example: replacing notary testament services}
 \label{notary-will}
+
+\iffalse
+- this section will discuss the role of a notary in writing a testament and how this can be replaced by technology. The notary can be seen a trusted storage provider for centralized storage, the testament.
+
+- It is not necessary by Belgian law to have a notary witness or store a testament \cite{eigen-testament}. However, they are still often used to witness the signature, store the testament and in general make sure everything is correct. This section will show a notary's service can be fully replaced by public key encryption, a blockchain and a regular lawyer, as the main difference between a regular lawyer and a notary is a notary's ability to witness a signature. The section starts with a very simple solution, but will gradually expand the proposal to make sure that by the end all aspects of a notary's testament service is covered.
+\fi
+
+This section will discuss how a notary's testament service can be replaced by technology. In the context of centralized databases, the notary can be seen a trusted storage provider for centralized storage, the testament.
+
+It is not necessary by Belgian law to have a notary witness or store a testament for the testament to be valid \cite{eigen-testament}. However, notaries are often used to witness the signature, store the testament and in general make sure everything is correct. This section will show how a notary's service can be fully replaced by public key encryption, a blockchain and a regular lawyer with no authority concerning witnessing signatures. The section starts with a very simple solution. The proposal will be gradually expanded, so all aspects of a notary's testament service are covered.
+
+\iffalse
+- signature. As mentioned before, the main reason for a notary's service is his witnessing of the signature. Because a testament can be a valuable document, several different parties might be incentivised to falsify the document and the signature. As the testator will be deceased, he will not be able to testify in court. 
+
+- with the incorporation of the digital signature into every Belgian ID, every Belgian has the possibility to sign any document digitally (D. De Win, personal communication, July 19, 2017). A digital signature is more secure than a manual signature, as it cannot be faked or immitated \cite{belgian-eid}.
+
+- in the simplest example, a testator writes his testament with the help of a regular lawyer to make sure all wording is correct. He then signs a digital version with his digital signature. Finally, he distributes the signed document to all potential stakeholders: family, friends, beneficiary institutions. He could even publish his signed testament online to make sure any stakeholder could access it.
+\fi
+
+\subsection{Signature}
+
+ As mentioned before, the main reason for a notary's service is the witnessing of the signature. Because a testament can be a valuable document, several parties might be incentivized to falsify the document and the signature. As the testator will be deceased, he will not be able to testify in court to verify his signature.
+
+ With the incorporation of the digital signature into every Belgian ID, every Belgian has the possibility to sign any document digitally (D. De Win, personal communication, July 19, 2017). A digital signature is more secure than a manual signature, as it cannot be faked or imitated \cite{belgian-eid}. 
+
+ In the simplest solution, a testator writes his testament with the help of a regular lawyer to make sure all wording is correct. He then signs a digital version with his digital signature. Finally, he distributes the signed document to all potential stakeholders: family, friends, beneficiary institutions and other recipients. He could even publish his signed testament online to make sure every stakeholder could access it.
+
+
+\subsection{Extra security with a blockchain}
+
+\iffalse
+- blockchain
+
+- A malicious agent could try to steal the testator's ID in the hours after the testator's death. If this agent knows the pin code of the testator's ID, he could forge a fake testament.
+
+- to avoid this situation, the testator could store a fingerprint of the signed testament onto a public blockchain, eg. the bitcoin blockchain. In this situation, it is proven that a document had to exist before the fingerprint had been incorporated into the public blockchain. Because of blockchains' consistency, it would be impossible to fake this.
+
+- storing a fingerprint onto a public blockchain has another advantage as well. it is no longer necessary to date the testament, as the earliest fingerprint on the blockchain can be seen as the date of creation.
+\fi
+
+In this simple proposal, a malicious agent could try to steal the testator's ID in the hours after the testator's death. If this agent knows the pin code of the testator's ID, he could forge a fake testament.
+
+To avoid this situation, the testator could store a fingerprint of the signed testament onto a public blockchain, eg. the bitcoin blockchain. In this situation, it is quickly proven that a document had to exist before the fingerprint had been incorporated into the public blockchain. 
+
+Storing a fingerprint onto a public blockchain has another advantage as well. It is now no longer necessary to date the testament, as the earliest fingerprint on the blockchain can be seen as the date of creation.
+
+\subsection{Secret keeping}
+
+\iffalse
+secret keeping
+
+- The final aspect of a notary's testament service that has not yet been covered by the blockchain alternative is secret keeping. In general, a notary will only reveal the contents of a testament once the testator is deceased. The current blockchain alternative is expecting the testator to distribute his testament to all stakeholders before he dies. This could result in some uncomfortable conversations.
+
+- An ethereum script could solve this final aspect. Instead of distributing the testament, the testator could distribute an encrypted version of the testament instead. He could then store the key to decrypt the testament into a script on the ethereum blockchain. This script would only release the decryption key once the testator has deceased. There are several ways for this script to determine whether the testator is effectively deceased. For example, the testator could distribute keys to family and friends. These keyholders can then vote to release the decryption key, with the testator a veto. Another solution could routinely ask a public governmental database whether the testator has been declared deceased.
+\fi
+
+The final aspect of a notary's testament service that has not yet been covered by the blockchain alternative is secret keeping. A notary will only reveal the contents of a testament once the testator is deceased. The current blockchain alternative is expecting the testator to distribute his testament to all stakeholders before he dies. This could result in uncomfortable, unwanted conversations.
+
+An ethereum script could solve this final aspect. Instead of distributing the testament, the testator could distribute an encrypted version of the testament instead. He could then store the key to decrypt the testament into a script on the ethereum blockchain. This script would only release the decryption key once the testator has deceased. There are several ways for this script to determine whether the testator is effectively deceased. 
+
+There are several approaches to write this script. The testator could distribute keys to family and friends. These key holders can then vote to release the decryption key, with the testator given a veto. If the testator is not yet deceased, he will always be able to block the release the key. The rationale of using a voting system is to prevent immediate publication if the testator is offline for a while and unable to exercise his veto. Another solution could involve a script that routinely asks a public governmental database whether the testator has been declared deceased.
