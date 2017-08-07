@@ -1,6 +1,32 @@
 \section{Storing distributed data onto a blockchain}
 \label{resource-allocation}
 
-As discussed in section \ref{store-on-bitcoin}, it is hard to find a viable to store centralized data onto a blockchain. But concerning distributed data, there are multiple use cases that benefit from storing their data directly onto a blockchain. These use cases have several characteristics in common: consensus and consistency are real issues, the low scalability is not a problem as they do not require large amounts of data to be stored, the high latency is not a problem as they prefer consistency over direct availability, and the application does not require delete functionality. 
+As discussed in section \ref{store-on-bitcoin}, it is hard to find a viable to store centralized data onto a blockchain. But concerning distributed data, there are multiple use cases that benefit from storing their data directly onto a blockchain. These use cases have several characteristics in common. First, consensus and/or consistency are real issues. On the other hand, the downsides of a blockchain are not big problems: the low scalability is not a problem as they do not require large amounts of data to be stored, the high latency is not a problem as they prefer consistency over direct availability, and the application does not require delete functionality. 
 
-This section will discuss two use cases 
+This section will discuss two use cases. Although they might seem different, at the core they both solve similar issues. Every use case starts out with an incentive issue between peers resulting in immutability and/or consensus issues. Then every case checks if the constraints of blockchain technology limit the potential use of a blockchain.
+
+\subsection{Managing an intercompany blacklist of unwanted clients}
+
+Several companies keep a blacklist of clients they do no longer want to do business with. To prevent shopping between competitors and protect the industry, some industries have moved from an intracompany blacklist to an intercompany blacklist. 
+
+However, competitors have incentives to mess with this blacklist. They could decide not to put a bad client on the intercompany blacklist to hurt their competitors. On the other hand, a company could decide to put a good client on the intercompany blacklist. When its competitors refuse this client, the company will be able to negotiate a more favorable contract with the client.
+
+These issues could be solved by retribution system. If it can be proven that a company did not include a bad client after having a bad customer relationship, or if a company cannot provide strong evidence for an inclusion of a client to the blacklist, this company should be punished. This punishment could for example be a monetary fine, or the company could be denied further access to the blacklist.
+
+But now are participating companies incentivized to mess with the data on the blacklist itself. If a company is accused of not including a bad client or of including a good client, this company could go into the database and respectively add or remove the client. In a normal database, there would be no way to prove the rogue company messed with the data. Immutability is essential.
+
+By using a custom blockchain to store the blacklist, immutability and accountability are guaranteed. Scalability is not a problem as the blacklist should never become too large, as it only includes the identification of the blacklisted entity. Latency is also not an issue, as it is probably sufficient for an entity to be included into the blockchain within the hour of being defined a bad client. Finally, removal of clients is not essential in a standard situation. To indicate a removal of the client from the blacklist, a company can add another data transaction to the blockchain vouching for this client. But, this last point will be expanded upon in section \ref{timestamping-db}.
+
+Specific design of such a custom blockchain is rather flexible. Because all data and metadata on the blockchain should be private, a private blockchain is advised. The most suitable consensus mechanism depends on the requirements and constraints of the specific situation. For example on the maximum time before a record can never be changed and the maximum maintenance cost.
+
+\subsection{Resource allocation}
+
+Several organizations deal with some kind of allocation problem of a limited resource. This resource could be anything. It could be a client lead several sales offices want to close but only one sales office is allowed to work on at the same time, it could be the use of a practice studio, or it could be the use of a domain name as in Namecoin \cite{namecoin-whitepaper}. 
+
+In most of these situations there are incentive issues between the participants to tinker with the database. The examples above deal with immutability issues. A rival sales office might want to steal a lead allocated to another sales office, a band might want to remove any proof of their reservation of the practice studio because they do not want to pay, and someone might want to take over a popular domain name. There are often consensus issues as well. If two bands try to reserve the same practice studio time slot at roughly the same time, which band should be awarded the reservation?
+
+Resource allocation problems clearly deal with immutability and consensus problems, which could be solved by a custom blockchain. Scalability will not often be a problem, as only the resource and the allocator are stored. Latency is not a problem as long as the allocation is made some time before it is actually needed. Finally, deletion is not essential. If necessary, the application could incorporate a transaction type that frees up an allocation.
+
+Design decisions need to be adapted to specific situation.
+
+Finally, besides directly solving the allocation problem, a blockchain also allows for queries on who allocated what. This is very interesting in the domain name example. It allows someone with knowledge of the blockchain to find the owner and the associated location of a certain domain name. But for the other examples this could be useful as well. In the sales office example, general management could easily find which sales office is working on which lead.
