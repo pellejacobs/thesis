@@ -1,2 +1,41 @@
-\section{Blockchain distributed storage}
+\section{Peer to peer distributed storage}
 \label{blockchain-distributed-storage}
+
+\iffalse
+
+- idea: instead of trusting a central party: 
+  - divide your storage data into little pieces and send the pieces to different storage providers => process of dividing is referred to as sharding. storage providers can be anyone: large companies with data centers or individuals with available space on their hard drive. 
+  - you send your shards of data to a storage provider. you can send every shard just once, or you could store it multiple times to be sure your data never disappears. the renter pays the hosts for the time they store their data.
+
+- however: multiple issues arise in this system: what if a host promises to store your data, but actually does not, what if a renter doesn't pay for the used storage space?
+
+- there are currently several solutions out there that try implement this concept, such as siacoin, storj and swarm. Others, such as ipfs and maidsafe, want to go even further trying to replace the internet as we know it.
+
+\fi
+
+
+
+
+
+\iffalse
+# storj
+
+- storj: uses a pay as you go system. every now and then you ask your storage providers for a proof that they are still holding your data. if you receive this proof, you pay them. If you do not receive a proof, you can assume this data is lost and make sure that piece of your date is reduplicated on the network. if a storage provider does not get paid for his proof, he can assume the user does not longer require him to store the data allowing him to delete this shard. 
+
+- There are still some issues though: 
+  - hosts take a risk when storing data, as they are never sure they will be paid. in the most extreme case, a malicious host might store a lot of data on the network, but never pay the first proof of storage, wasting this storage space
+  - hosts do have no cost of not providing a proof of storage. 
+  this makes the network very vulnerable to a sybil attack \ref{sybil-attack}. in which one malicious agent pretends to be several hosts at same time, at no cost. renters might think their data is secure, as it is duplicated over several hosts. However, the one malicious agent can turn off all his hosts, effectively destroying the stored data.
+
+
+\fi
+\iffalse
+#siacoin
+
+- instead of pay as you go system, uses siacoin a blockchain to support their storage network. A host and a renter both sign a smart contract onto the siacoin blockchain. In this smart contract, the renter puts in his payment for the storage and the host puts in a collatoral in case he is not able to produce a proof of storage when the contract expires. Consequentially, the host is assured he will be paid by the blockchain, even when the renter is offline at the time the contract expires. And the renter is has a better assurance the host will provide the stored data as he would be rewarded the collatoral instead.
+
+- Because the siacoin blockchain is publicly available, hosts' peformance is publicly visible. Hosts that are always providing a proof of storage when asked will be very reputable, while hosts that are less available will have a lower reputation or might even be blacklisted.
+
+- Finally, siacoin has an additional protection against a sybil attack. Although hosts have to pay a collateral if they do not provide a proof of storage, a malicious agent might still spin up an insane amount of hosts. His hosts are very likely to be picked to store data for the same renter. While it is not costless, the data duplication redundancy is not sufficient to prevent the malicious agent from effectively destroying the data of this renter. To prevent this situation, renters expect hosts to prove they are real by providing a proof-of-burn. This means that a host send coins to an address that cannot spend these coins.
+
+\fi

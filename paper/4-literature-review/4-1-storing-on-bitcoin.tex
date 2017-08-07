@@ -4,16 +4,31 @@
 \iffalse
 - very obvious solution would be to store data directly onto a blockchain, eg. the bitcoin blockchain. you would just put all the data, properly encrypted, directly onto the blockchain and it is stored
 
+\fi
+
+An obvious proposal is to store collaborative data directly onto a blockchain, for example onto the bitcoin blockchain. A user could encrypt his data and store it onto the bitcoin blockchain using a data transaction. Anyone else with the proper key could access this data, change it and submit an updated version.
+
+\iffalse
 - various issues arise: 
   - basic functionality is missing that several applications need: you are not able to change or remove data once stored data, to update a file you would have to store the entire file again or store just the change and have your application reading the blockchain create the most recent file.
   - as mentioned in section \ref{subsubsec:blockchain-as-distributed-dbs}, blockchains deal with low scalability, high latency and potential privacy concerns.
   - insanely expensive: 0.0000026 BTC per byte \cite{bitcoin-transaction-fee}. At a current market cap of €2418.09 per BTC, the cost of storage is €6.44 per KB. \cite{bitcoin-market-cap}
+\fi
 
+However, there are multiple issues with this approach. 
+
+First, it is not possible to change or remove data once it is stored onto the blockchain. To update a file, the user would have to upload the entire new file. Another option is to store just the changes to the original file onto the blockchain. In the this case, the application used to read the data from the blockchain would create the most recent version of the file based on the original file and the submitted changes. 
+
+Secondly, blockchains' characteristics such as low scalability, high latency and potential privacy concerns make them useless for most centralized database applications. These issues have been thoroughly discussed in section \ref{subsubsec:blockchain-as-distributed-dbs}.
+
+Finally, storing data onto a blockchain is very expensive because of its low scalability. Considering the bitcoin blockchain, every byte of storage costs 0.0000026 BTC\cite{bitcoin-transaction-fee}. At a current market cap of €2418.09 per BTC, 1 KB costs €6.44. \cite{bitcoin-market-cap}.
+
+\iffalse
 - because in a context of centralized database, consistency and consensus as are not issues. Solving these problems is the main selling point of blockchain. Although it might be interesting that blockchain provides consistency, this could also be a problem. Some centralized databases might require delete functionality. This is no possible when using a blockchain
 
 - not viable for storage of normal amounts of data
 \fi
 
-An obvious proposal is to store collaborative data directly onto a blockchain, for example onto the bitcoin blockchain. A user could encrypt his data and store it onto the bitcoin blockchain using a data transaction. Anyone else with the proper key could access this data, change it and submit an updated version.
+On the other hand, solving the issues consistency and consensus are the main selling point of blockchains but are not seen as issues in a context of centralized databases. On the contrary, enforced consistency could be a problem for certain applications that require delete functionality.
 
-However, there are multiple issues with this approach.
+Because of these reasons, it is clear that blockchains not a viable instrument to store normal amounts of data directly.
