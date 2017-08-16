@@ -13,13 +13,13 @@
 
 \fi
 
-Distributed cloud storage network replaces a trusted storage provider such as Amazon or Dropbox with a large network of storage providers. Storage providers can be large companies with data centers to their disposal or individuals with some available space on their hard drive. These storage providers are referred to as the hosts. 
+A distributed cloud storage network replaces a trusted storage provider such as Amazon or Dropbox with a large network of storage providers. Storage providers can be large companies with data centers to their disposal or individuals with free storage space on their hard drive. These storage providers are referred to as the hosts. 
 
-When a user, called a renter, wants to store his data on the network, he divides his data into small pieces. The host then sends these pieces to the hosts. For extra redundancy and security, the renter duplicates his pieces several times on the network. The renter then pays the hosts for the time they store their data.
+When a user, called a renter, wants to store his data on the network, he divides his data into small pieces. The renter then sends these pieces to the hosts. For extra redundancy and security, the renter duplicates his pieces several times on the network. The renter then pays the hosts for the time they store their data.
 
-This simple concept faces multiple issues. A host could promise to store a renter's data without actually keeping the data. A renter would have to do some insane redundancy duplication on the network to safely store his data, while still being at risk of losing an essential piece of data. On the other hand, a host storing a renter's data is never guaranteed the renter will actually pay.
+This simple concept faces multiple issues. A host could promise to store a renter's data without actually keeping the data. A renter would have to do some insane redundancy duplication on the network to safely store his data, while still being at risk of losing an essential piece. On the other hand, a host storing a renter's data is never guaranteed the renter will actually pay.
 
-Currently, several solutions try to implement this concept. Siacoin, Storj, and SWARM implement focus on cloud storage. Others, such as IPFS and Maidsafe, want to go further and are trying to replace the internet as it currently works. This thesis will focus on cloud storage and compare two current commercial solutions: Siacoin and Storj.
+Currently, several solutions try to implement this concept. Siacoin \cite{siacoin} and Storj \cite{storj} focus on cloud storage. Others, such as IPFS \cite{IPFS} and Maidsafe \cite{maidsafe}, want to go further and are trying to replace the internet as it currently works. This thesis will focus on cloud storage and compare two current commercial solutions: Siacoin and Storj.
 
 
 \subsection{Storj}
@@ -38,13 +38,13 @@ Currently, several solutions try to implement this concept. Siacoin, Storj, and 
 \fi
 
 
-Storj uses a pay as you go system. From time to time, the renter asks the hosts for a proof of storage that they still hold the data. If the renter receives this proof, he pays them. If the renter does not receive the proof, his assumes this host does no longer store his data and the renter makes sure that piece of the software is reduplicated on the network. If a host does not receive a payment for a proof of storage, he assumes the renter does no longer require him to store the data and that he can delete the renter's data. \cite{storj}
+Storj uses a pay as you go system. From time to time, the renter asks the hosts for a proof of storage that they still hold the data. If the renter receives this proof, he pays them. If the renter does not receive the proof, his assumes this host does no longer store his data and the renter makes sure that piece is reduplicated on the network. If a host does not receive a payment for a proof of storage, he assumes the renter does no longer require him to store the data and that he can delete the renter's data. \cite{storj}
 
 Although this solves some of the original incentive issues, there are still other issues. 
 
 Hosts are never sure they will be paid when storing data. This means that the network is vulnerable to a denial of service attack. If a malicious agent stores a lot of data on the network without ever paying the first proof of storage, the network's storage space is being wasted, making it unavailable for honest renters.
 
-Furthermore, hosts still have no cost of not providing a proof of storage. This makes the network more vulnerable to a Sybil attack \cite{sybil-attack}, in which a malicious agent pretends to be multiple hosts without any cost. A renter might think his data is secure as it seems duplicated over several hosts. However, the malicious agent controls these hosts, allowing him to destroy the data at no cost.
+Furthermore, hosts still have no cost of not providing a proof of storage. This makes the network more vulnerable to a Sybil attack \cite{sybil-attack}, in which a malicious agent pretends to be multiple hosts without any cost. A renter might think his data is secure as it seems duplicated over several hosts. However, the malicious agent controlling these hosts could destroy the data at any time.
 
 \subsection{Siacoin}
 
@@ -61,6 +61,6 @@ gs
 
 Instead of a pay as you go system, Siacoin uses a blockchain to support their network. A host and a renter both sign a smart contract onto the Siacoin blockchain. In this smart contract, the renter puts in his payment for the storage and the host puts in a collateral in case he is not able to produce a proof of storage when the contract expires. Consequentially, the host is assured he will be paid by the blockchain, even when the renter is offline at the time the contract expires. The renter has a better assurance the host will provide the stored data as he would be rewarded the collateral instead.
 
-Because the Siacoin blockchain is publicly available, hosts' performance is publicly visible. Hosts that are always providing a proof of storage when asked will be very reputable, while less available hosts will have a lower reputation or might even be blacklisted.
+Because the Siacoin blockchain is publicly available, hosts' performance is publicly visible. Hosts that always provide a proof of storage when asked, will be very reputable. Less available hosts will have a lower reputation or might even be blacklisted.
 
 Finally, Siacoin has an additional protection against a Sybil attack. Although hosts have to pay a collateral if they do not provide a proof of storage, a malicious agent might still spin up an insane amount of hosts. His hosts are very likely to be picked to store data for the same renter. While it is not costless, the data duplication redundancy is not sufficient to prevent the malicious agent from effectively destroying the data of this renter. To prevent this situation, a renter expects a host to prove they are real by providing a proof-of-burn. This means that a host sends coins to an address that cannot spend these coins. \cite{siacoin}
