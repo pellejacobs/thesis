@@ -37,11 +37,11 @@ The CAP theorem (Consistency, Availability, and Partition-resilience) states tha
 \subsection{Issues with distributed databases in collaborative systems}
 \label{subsec:issues-distributed-dbs}
 
-In a guided system, there is one authoritative entity controlling every node in the network. But in a collaborative system, separate agents with individual incentives have to work together. This creates a whole new set of challenges, namely consensus and consistency issues.
+In a guided system, there is one authoritative entity controlling every node in the network. But in a collaborative system, separate agents with individual incentives have to work together. This creates a whole new set of challenges, namely consensus and immutability issues.
 
 Consensus issues arise when the database has been updated on two different nodes at the same time. Somehow, these two conflicting versions have to be merged. % For example, Alice spends a cryptocurrency coin to buy something from Bob. But at the same time, she uses this same coin to buy something from Claire. etc etc
 
-Consistency issues emerge when the agreed upon the past can be changed. For example, Alice wants to spend a cryptocurrency coin. The merchant makes sure that the coin is valid and approves the purchase. But when consistency is not properly enforced, Alice can go into the database and manually remove the transaction. This nullifies the transaction, allowing Alice to spend the coin again. It is important to note that this idea of consistency is not related to the consistency representing the C in the CAP theorem.
+Immutability issues emerge when the agreed upon the past can be changed. For example, Alice wants to spend a cryptocurrency coin. The merchant makes sure that the coin is valid and approves the purchase. But when immutability is not properly enforced, Alice can go into the database and manually remove the transaction. This nullifies the transaction, allowing Alice to spend the coin again. It is important to note that this idea of immutability is not related to the immutability representing the C in the CAP theorem.
 
 \subsection{Examples of distributed databases and networks used in collaborative systems}
 \label{subsec:examples-distributed-dbs}
@@ -63,7 +63,7 @@ Git is the most popular distributed version control system. A version control sy
 
 Git includes a specialized algorithm to automatically merge new changes into the code base. Consequentially, the consensus problem is often automatically solved. However, when two developers made changes to the same code, the algorithm fails, resulting in a ``merge conflict''. It is then up to the developer to manually solve the conflict. 
 
-Consistency is not enforced in git. This means that any developer can manipulate the history of changes. This is useful when for example a large file has accidentally been included into the project. This bloats the size of the project and hampers collaboration. Simply removing the file does not help, as the file will still be part of the code history. To completely get rid of this file, the original inclusion has to be nullified. However, this could be used for malicious practices as well. Imagine a problem arises because of a programming mistake made some weeks ago. In case the developer does not want to be held accountable, he could remove his change from the history. Or he could even change the author of the change to someone else \cite{change-author-commit}.
+Immutability is not enforced in git. This means that any developer can manipulate the history of changes. This is useful when for example a large file has accidentally been included into the project. This bloats the size of the project and hampers collaboration. Simply removing the file does not help, as the file will still be part of the code history. To completely get rid of this file, the original inclusion has to be nullified. However, this could be used for malicious practices as well. Imagine a problem arises because of a programming mistake made some weeks ago. In case the developer does not want to be held accountable, he could remove his change from the history. Or he could even change the author of the change to someone else \cite{change-author-commit}.
 
 It is clear that the git system needs trust between the developers. But in certain projects, there is no trust. For example, in open source projects, any developer can propose code changes. This is why on hosting sites for git repositories, such as Github, authorized users need to approve a code change before it can be added to the main code base \cite{github-pr}. But this partially removes the distributed character of git.
 
@@ -73,7 +73,7 @@ Considering the CAP theorem, it is clear git is available and partition-resilien
 
 BitTorrent is a peer-to-peer file distribution system. Instead of downloading a file from a central server, users download the file from peers that already (partially) have the file. However, once a file is uploaded with BitTorrent, it can no longer be changed. Most databases need some sort of write functionality. This characteristic disqualifies BitTorrent for most database applications. Yet, the single focus makes BitTorrent work really well for file sharing. As a result, BitTorrent was one of the first widely accepted collaborative, distributed networks. It ``increasingly becomes the norm for media acquisition among the general Internet public'' (Andersson, J. 2009 \cite{bittorrent-norm})
 
-As there are no updates to a BitTorrent file, consensus and consistency are not an issue. Also, the CAP theorem is not relevant in this writeless context. BitTorrent is consistent, available and partition-resilient.
+As there are no updates to a BitTorrent file, consensus and immutability are not an issue. Also, the CAP theorem is not relevant in this writeless context. BitTorrent is consistent, available and partition-resilient.
 
 \subsubsection{Blockchain}
 \label{subsubsec:blockchain-as-distributed-dbs}
@@ -84,14 +84,14 @@ As there are no updates to a BitTorrent file, consensus and consistency are not 
 - disadvantages of blockchains: latency and scalability
 \fi
 
-The blockchain technology has already been explained in the previous section. Blockchain solves both the consensus issue as the consistency issue quite well. It is, therefore, a prime candidate for applications that require a collaborative database.
+The blockchain technology has already been explained in the previous section. Blockchain solves both the consensus issue as the immutability issue quite well. It is, therefore, a prime candidate for applications that require a collaborative database.
 
 % consensus: forks and resolving
 Blockchain handles the consensus issue quite well. As previously explained, once a miner has found a new valid block, he propagates this block through the blockchain network. Other miners will continue mining on the new block, as such appending the blockchain. But if two miners simultaneously find a valid block, they will both propagate this block through the network. Some miners will first receive one block and continue mining on top of that block, others will mine on top of the other block. In this case, there are effectively two different versions of the database. This phenomenon is called a fork. To solve this fork, miners are incentivized to work on top of the longest fork. As it is unlikely that miners will again simultaneously find a new valid block, one fork will quickly become longer than the other. This compels the miners to switch to the longest fork, thus resolving the fork \cite{antonopoulos:2014}. 
 
 % TODO consistency: incredibly hard to rewrite history, as would need to recalculate all the blocks afterward
 
-Consistency is built into the blockchain idea. An attacker would first have to create a fork before a certain block he wants to alter. For this fork to be accepted as the proper blockchain, the attacker would need to make the fork longer than the current blockchain. Without more than 50\% of the network's computing power, this is mathematically impossible for blocks deep in the blockchain. As Nakamoto (2008) calculates in his paper, there is less than 0.1\% an attacker with 25\% of total computing power can catch up after 15 blocks have passed. As currently, the largest mining pool holds only 23.8\% \cite{hashrate-distribution}, waiting 15 blocks would be extremely safe. In general, the bitcoin community agrees that after 6 confirmation blocks a transaction is confirmed \cite{bitcoin-confirmation-amount}. For small transactions, best practice states that one confirmation block should suffice. Larger transactions might need three confirmation blocks \cite{confirmation-safety}.
+immutability is built into the blockchain idea. An attacker would first have to create a fork before a certain block he wants to alter. For this fork to be accepted as the proper blockchain, the attacker would need to make the fork longer than the current blockchain. Without more than 50\% of the network's computing power, this is mathematically impossible for blocks deep in the blockchain. As Nakamoto (2008) calculates in his paper, there is less than 0.1\% an attacker with 25\% of total computing power can catch up after 15 blocks have passed. As currently, the largest mining pool holds only 23.8\% \cite{hashrate-distribution}, waiting 15 blocks would be extremely safe. In general, the bitcoin community agrees that after 6 confirmation blocks a transaction is confirmed \cite{bitcoin-confirmation-amount}. For small transactions, best practice states that one confirmation block should suffice. Larger transactions might need three confirmation blocks \cite{confirmation-safety}.
 
 % TODO cap: ap and eventually consistent: 
 
