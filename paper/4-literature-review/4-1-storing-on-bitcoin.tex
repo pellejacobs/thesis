@@ -1,18 +1,18 @@
 \section{Storing centralized data onto a blockchain}
-\label{store-on-bitcoin}
+\label{store-on-Bitcoin}
 
 \iffalse
-- very obvious solution would be to store data directly onto a blockchain, eg. the bitcoin blockchain. you would just put all the data, properly encrypted, directly onto the blockchain and it is stored
+- very obvious solution would be to store data directly onto a blockchain, eg. the Bitcoin blockchain. you would just put all the data, properly encrypted, directly onto the blockchain and it is stored
 
 \fi
 
-An obvious proposal is to store centralized data directly onto a blockchain, for example onto the bitcoin blockchain. A user could encrypt his data and store it onto the bitcoin blockchain using a data transaction. Anyone else with the proper key could access this data and submit an updated version.
+An obvious proposal is to store centralized data directly onto a blockchain, for example onto the Bitcoin blockchain. A user could encrypt his data and store it onto the Bitcoin blockchain using a data transaction. Anyone else with the proper key could access this data and submit an updated version.
 
 \iffalse
 - various issues arise: 
   - basic functionality is missing that several applications need: you are not able to change or remove data once stored data, to update a file you would have to store the entire file again or store just the change and have your application reading the blockchain create the most recent file.
   - as mentioned in section \ref{subsubsec:blockchain-as-distributed-dbs}, blockchains deal with low scalability, high latency and potential privacy concerns.
-  - insanely expensive: 0.0000026 BTC per byte \cite{bitcoin-transaction-fee}. At a current market cap of €2418.09 per BTC, the cost of storage is €6.44 per KB. \cite{bitcoin-market-cap}
+  - insanely expensive: 0.0000026 BTC per byte \cite{Bitcoin-transaction-fee}. At a current market cap of €2418.09 per BTC, the cost of storage is €6.44 per KB. \cite{Bitcoin-market-cap}
 \fi
 
 However, there are multiple issues with this approach. 
@@ -21,7 +21,7 @@ First, it is not possible to change or remove data once it is stored onto the bl
 
 Secondly, blockchains' characteristics such as low scalability, high latency, and potential privacy concerns make them useless for most centralized database applications. These issues have been thoroughly discussed in section \ref{subsubsec:blockchain-as-distributed-dbs}.
 
-Finally, storing data onto a blockchain is very expensive because of its low scalability. Considering the bitcoin blockchain, every byte of storage costs 0.0000026 BTC\cite{bitcoin-transaction-fee}. At a current market cap of \euro 2418.09 per BTC, 1 KB costs \euro 6.44. \cite{bitcoin-market-cap}.
+Finally, storing data onto a blockchain is very expensive because of its low scalability. Considering the Bitcoin blockchain, every byte of storage costs 0.0000026 BTC\cite{Bitcoin-transaction-fee}. At a current market cap of \euro 2418.09 per BTC, 1 KB costs \euro 6.44. \cite{Bitcoin-market-cap}.
 
 \iffalse
 - because in a context of centralized database, immutability and consensus as are not issues. Solving these problems is the main selling point of blockchain. Although it might be interesting that blockchain provides immutability, this could also be a problem. Some centralized databases might require delete functionality. This is no possible when using a blockchain

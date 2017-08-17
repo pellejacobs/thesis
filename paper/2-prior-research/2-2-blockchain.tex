@@ -8,7 +8,7 @@ todo:
 - reread and remove weird references
 \fi
 
-In the last few years, the blockchain as a concept has been given a wide range of meanings and definitions. Some explain the blockchain as a history of events, some focus on blockchain as a bitcoin transaction ledger and some talk about the open decentralized database aspect of blockchains \cite{blockchain-multiple-definitions}. Therefore, this section starts by defining this concept, to avoid any misunderstanding or confusion further on.
+In the last few years, the blockchain as a concept has been given a wide range of meanings and definitions. Some explain the blockchain as a history of events, some focus on blockchain as a Bitcoin transaction ledger and some talk about the open decentralized database aspect of blockchains \cite{blockchain-multiple-definitions}. Therefore, this section starts by defining this concept, to avoid any misunderstanding or confusion further on.
 
 This thesis will use the blockchain definition as defined by Antonopoulos (2014) \cite{antonopoulos:2014}: ``The blockchain data structure is an ordered, back-linked list of blocks and transactions.'' (p. 159). There are several aspects in this definition that need further explanation.
 
@@ -22,7 +22,7 @@ Next, a blockchain is a specialized version of an ``ordered, back-linked list''.
 
 The second part of the definition mentions transactions. Transactions are the data objects that store information on the blockchain. There are two types of transactions: monetary transactions and non-monetary transactions.
 
-In a monetary transaction, there is a transfer of value between participants, eg. an amount of bitcoin. The simplest monetary transaction transfers value from one account to another. However, several blockchains allow custom conditions to be scripted into the transactions. These conditions can be used to imitate for example a crop insurance contract. In this situation, the transaction would only execute if the recipient experiences a drought. Transactions with such a custom condition are often referred to as ``smart contracts'' \cite{ethereum-whitepaper}.
+In a monetary transaction, there is a transfer of value between participants, eg. an amount of Bitcoin. The simplest monetary transaction transfers value from one account to another. However, several blockchains allow custom conditions to be scripted into the transactions. These conditions can be used to imitate for example a crop insurance contract. In this situation, the transaction would only execute if the recipient experiences a drought. Transactions with such a custom condition are often referred to as ``smart contracts'' \cite{Ethereum-whitepaper}.
 
 On the other side, there are non-monetary transactions that store data onto the blockchain. A common use case is the storage of the fingerprint of a document on the blockchain, thereby proving the document had to exist at the time the transaction was included into the blockchain. This case is referred to as proof of existence \cite{proof-of-existence}.
 
@@ -114,23 +114,23 @@ The use of a permissioned, public blockchain can be a necessary compromise in si
 
 % discuss: short introduction, properties, characteristics making it an interesting blockchain
 
-The best-known implementation of blockchain technology is in the bitcoin cryptocurrency. Bitcoin is a cryptocurrency created by Satoshi Nakamoto in 2008 \cite{bitcoin-paper}. In June 2017, bitcoin hit a record market capitalization of \$48.8 billion \cite{bitcoin-market-cap}. It is by far the most popular and best-established cryptocurrency. The drawback of this popularity is the difficulty to change flaws in the system. This results in crises such as the recent block size crisis \cite{bitcoin-civil-war}.
+The best-known implementation of blockchain technology is in the Bitcoin cryptocurrency. Bitcoin is a cryptocurrency created by Satoshi Nakamoto in 2008 \cite{Bitcoin-paper}. In June 2017, Bitcoin hit a record market capitalization of \$48.8 billion \cite{Bitcoin-market-cap}. It is by far the most popular and best-established cryptocurrency. The drawback of this popularity is the difficulty to change flaws in the system. This results in crises such as the recent block size crisis \cite{Bitcoin-civil-war}.
 
-The bitcoin blockchain is a public, permissionless blockchain with a proof of work consensus mechanism. This means that everyone has read access to the data on this blockchain, everyone can propose transactions to be added to the blockchain and everyone can start a node to help to accept proposed transactions.
+The Bitcoin blockchain is a public, permissionless blockchain with a proof of work consensus mechanism. This means that everyone has read access to the data on this blockchain, everyone can propose transactions to be added to the blockchain and everyone can start a node to help to accept proposed transactions.
 
-The bitcoin blockchain uses a basic scripting language to power its transaction processing. This language is only advanced enough to process simple transactions and store short pieces of data \cite{antonopoulos:2014}. On one side, the simplicity of this language could be seen as a limitation of its potential. On the other hand, it is a feature of the bitcoin blockchain that makes it less prone to attacks.
+The Bitcoin blockchain uses a basic scripting language to power its transaction processing. This language is only advanced enough to process simple transactions and store short pieces of data \cite{antonopoulos:2014}. On one side, the simplicity of this language could be seen as a limitation of its potential. On the other hand, it is a feature of the Bitcoin blockchain that makes it less prone to attacks.
 
-The bitcoin blockchain is interesting because of its strong security. In July 2017, the bitcoin blockchain mining network had a hash rate of around 6.6 exa hashes per second \cite{bitcoin-hash-rate}. This means that the bitcoin network is being supported by the equivalent computing power of 1.9 trillion Macbook Pros from 2014. This shows the security of the bitcoin network. To break the system, one node would need to control half of this computing power, which is quite unlikely. The only conceivable way is to develop a supercomputer that is more powerful than all the computers ever made combined, such as a 50 qubits quantum computer \cite{quantum-newsweek}.
+The Bitcoin blockchain is interesting because of its strong security. In July 2017, the Bitcoin blockchain mining network had a hash rate of around 6.6 exa hashes per second \cite{Bitcoin-hash-rate}. This means that the Bitcoin network is being supported by the equivalent computing power of 1.9 trillion Macbook Pros from 2014. This shows the security of the Bitcoin network. To break the system, one node would need to control half of this computing power, which is quite unlikely. The only conceivable way is to develop a supercomputer that is more powerful than all the computers ever made combined, such as a 50 qubits quantum computer \cite{quantum-newsweek}.
 
-Because the strength of the bitcoin mining network, it is used by other blockchains to help secure their own network. Namecoin is such an example \cite{namecoin-whitepaper}.
+Because the strength of the Bitcoin mining network, it is used by other blockchains to help secure their own network. Namecoin is such an example \cite{namecoin-whitepaper}.
 
 \subsubsection{Ethereum}
 
-Ethereum is another cryptocurrency powered by a blockchain. It is the second most valuable cryptocurrency with a market capitalization of \$36.2 billion in June 2017. While bitcoin focuses on creating a secure, no-nonsense currency, ethereum tries to leverage the entire potential of the blockchain. This creates endless possibilities but makes ethereum also more complex than bitcoin.
+Ethereum is another cryptocurrency powered by a blockchain. It is the second most valuable cryptocurrency with a market capitalization of \$36.2 billion in June 2017. While Bitcoin focuses on creating a secure, no-nonsense currency, Ethereum tries to leverage the entire potential of the blockchain. This creates endless possibilities but makes Ethereum also more complex than Bitcoin.
 
-Like the bitcoin blockchain, the ethereum blockchain is public and permissionless with a proof of work consensus mechanism. However, there are plans to move to a proof of stake approach in the future \cite{ethereum-pos-faq}. 
+Like the Bitcoin blockchain, the Ethereum blockchain is public and permissionless with a proof of work consensus mechanism. However, there are plans to move to a proof of stake approach in the future \cite{Ethereum-pos-faq}. 
 
-As explained in the ethereum white paper \cite{ethereum-whitepaper}, the programming language powering the ethereum blockchain is Turing complete. Practically, this means that any conceivable program could be written in this language \cite{definition-turing-completeness}.
+As explained in the Ethereum white paper \cite{Ethereum-whitepaper}, the programming language powering the Ethereum blockchain is Turing complete. Practically, this means that any conceivable program could be written in this language \cite{definition-turing-completeness}.
 
-Because of its wide potential, the source code of the ethereum blockchain is often copied, adjusted and redeployed for custom blockchain solutions. 
+Because of its wide potential, the source code of the Ethereum blockchain is often copied, adjusted and redeployed for custom blockchain solutions. 
 
