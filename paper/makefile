@@ -1,7 +1,7 @@
 all:	full
 
 once:
-	pdflatex -halt-on-error template; open template.pdf;
+	pdflatex -halt-on-error template;
 
 silent:
 	pdflatex -halt-on-error template > /dev/null ; pdflatex -halt-on-error template > /dev/null ; open template.pdf > /dev/null
