@@ -11,13 +11,13 @@ Some use cases also require deletion functionality. As Jean-Luc Verhelst, blockc
 
 To evade these issues, peers in the network can decide to use a database similar to how git operates. Every peer holds its own version of the data. If a peer changes an entry, he propagates the change through the network. If a peer receiving such a change thinks this change is fine, he might decide to implement the change. If the change conflicts with another change to the same data, this peer might decide not to implement the change. Because not everyone implements the same changes, all versions of the database will gradually start to differ. 
 
-To fix these differences, all peers will come together every now and then to manually agree on a consensus concerning the differences between the databases. Once consensus is achieved, all peers agree on a single truthful version of the data. To ensure immutability, participants then take a fingerprint of the database, digitally sign this fingerprint and post it to a public blockchain, eg. the Bitcoin blockchain.
+These differences have to be fixed. Therefore, every now and then all peers will come together to manually agree on a consensus. Once consensus is achieved, all peers agree on a single truthful version of the data. To ensure immutability, participants then take a fingerprint of the database, digitally sign this fingerprint and post it to a public blockchain, eg. the Bitcoin blockchain.
 
 Peers can now continue to work from this new version of the database and remove all previous data. If a peer wants to prove the distributed database contained certain data at a certain time, he only has to show that an exact copy of this version of the database has the same fingerprint as the fingerprint stored on the public blockchain at that time. As the fingerprint has been signed by all peers, all peers agreed at the time that was the version of the truth. This essentially timestamps the database.
 
 % how does this solve scalability and right to be forgotten
 
-This solves the scalability issue as a digital fingerprint is agnostic of the size of its subject. The size of the database does not matter anymore. Deletion functionality is available as well. Once consensus has been achieved, all previous versions of the database can be deleted. Applied to the blacklist example of section \ref{blacklist}, peers can decide to remove a client from the blacklist essentially removing him from the database used for related decisions.
+This solves the scalability issue because a digital fingerprint is independent of the size of its subject. The size of the database does not matter anymore. Deletion functionality is available as well. Once consensus has been achieved, all previous versions of the database can be deleted. Applied to the blacklist example of section \ref{blacklist}, peers can decide to remove a client from the blacklist essentially removing him from the database used for related decisions.
 
 
 % what are the disadvantages

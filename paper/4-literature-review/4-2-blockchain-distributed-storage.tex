@@ -19,7 +19,7 @@ When a user, called a renter, wants to store his data on the network, he divides
 
 This simple concept faces multiple issues. A host could promise to store a renter's data without actually keeping the data. A renter would have to do some insane redundancy duplication on the network to safely store his data, while still being at risk of losing an essential piece. On the other hand, a host storing a renter's data is never guaranteed the renter will actually pay.
 
-Currently, several solutions try to implement this concept. Siacoin \cite{siacoin}, Storj \cite{storj}, and Filecoin \cite{filecoin} focus on cloud storage. Others, such as IPFS \cite{IPFS} and Maidsafe \cite{maidsafe}, want to go further and are trying to replace the internet as it currently works. This thesis will focus on cloud storage and compare two current commercial solutions: Siacoin and Storj.
+Currently, several solutions try to implement this concept. Siacoin \cite{siacoin}, Storj \cite{storj}, and Filecoin \cite{filecoin} focus on cloud storage. Others, such as IPFS \cite{ipfs} and Maidsafe \cite{maidsafe}, want to go further and are trying to replace the internet as it currently works. This thesis will focus on cloud storage and compare two current commercial solutions: Siacoin and Storj.
 
 
 \subsection{Storj}
@@ -59,7 +59,7 @@ gs
 
 \fi
 
-Instead of a pay as you go system, Siacoin uses a blockchain to support their network. A host and a renter both sign a smart contract onto the Siacoin blockchain. In this smart contract, the renter puts in his payment for the storage and the host puts in a collateral in case he is not able to produce a proof of storage when the contract expires. Consequentially, the host is assured he will be paid by the blockchain, even when the renter is offline at the time the contract expires. The renter has a better assurance the host will provide the stored data as he would be rewarded the collateral instead.
+Instead of a pay as you go system, Siacoin uses a blockchain to support their network. A host and a renter both sign a smart contract onto the Siacoin blockchain. In this smart contract, the renter puts in his payment for the storage and the host puts in a collateral in case he is not able to produce a proof of storage when the contract expires. Consequentially, the host is assured he will be paid by the blockchain, even when the renter is offline at the time the contract expires. The renter has a better assurance that the host will provide the stored data as he would be rewarded the collateral instead.
 
 Because the Siacoin blockchain is publicly available, hosts' performance is publicly visible. Hosts that always provide a proof of storage when asked, will be very reputable. Less available hosts will have a lower reputation or might even be blacklisted.
 
