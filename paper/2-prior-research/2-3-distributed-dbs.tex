@@ -99,11 +99,30 @@ The CAP theorem can also be applied to blockchains. As Goland states in his blog
 
 However, there are some practical disadvantages with the blockchain. The first disadvantage is the lack of scalability of a blockchain. The main reason is that blockchain holds all transactions ever executed. As a result, the size of the blockchain constantly increases. This gradually pushes smaller nodes out of the network as they cannot afford to hold the entire blockchain in storage \cite{blockchain-scalability}. Another disadvantage is the latency of blockchains. To make sure a transaction has been included in the blockchain, merchants are expected to wait for some confirmation blocks. For example, the Bitcoin blockchain creates one block every 10 minutes. This could be an issue for several applications. Imagine going to a coffee shop and having to wait 30 minutes before you can get your coffee. Even though there are blockchains with lower block time (Ethereum has a block time of 22 seconds \cite{Ethereum-block-time}), these blockchains need more confirmations because of the higher chance of a fork. Another important concern concerning public blockchains could be privacy. Although the data stored to the blockchain can be properly encrypted, everyone with reading access to the blockchain can see when this data is submitted. Finally, some applications might require delete functionality. Because of blockchain's immutability, data can never be deleted.
 
+\iffalse
+solve scalability: 
+
+- segragated witness: 
+  - in case of monetary transactions, 60% of transaction size is the actual signature. 
+
+  - disadvantages: 
+    - only a onetime increase in capacity. it is not a durable to solve blockchain's scalability
+    - it is mainly helpful when transactions on the blockchain have a small data load. as the relative size of the signature decreases, the advantage of segregated witness diminishes
+
+- sharding? 
+\fi
+
+As storage capacity is often an important characteristic of a database, it is important to expand on possible solutions of blockchain's scalability problem. 
+
+One of these proposal is ``segregated witness'', only recently implemented into the Bitcoin blockchain. As Bitcoin Core developer Wuille explains in his 2015 presentation, 60\% of the size of an average Bitcoin transaction is the signature \cite{segregated-witness}. However, this signature is only necessary when a transaction is validated. A blockchain implementing segregated witness would put the sender's signature and the receiver's address into a separate extended ``witness'' block. As a result, blockchain nodes not interested in validating transactions can choose not to receive the witness block. This would reduce the necessary bandwidth for light nodes. Furthermore, the witness blocks could be pruned from historical data, reducing the total storage size of the blockchain. However, there are two important remarks. First of all, this is only a one-time increase in capacity. Segregated witness is not a durable solution for blockchain's scalability issue. Secondly, the benefits of segregated witness diminish when the relative size of the signature in the average transaction is smaller. It is very helpful in a blockchain such as the Bitcoin blockchain, where 60\% of the transaction is the signature data. However, for blockchains that store more data per transaction, the benefits of removing the signature from historical data will diminish.
+
+Another proposal is to shard the blockchain. As Buterin explains, the basic idea is to split the blockchain into smaller parts, called shards. Instead of holding the entire blockchain in storage, a node could decide to only hold the shard relevant to him. In the simplest implementation, every shard would have its own transaction history. A more advanced version would involve the possibility of cross-shard communication, in which a transaction on one shard could trigger events on other shards \cite{blockchain-sharding}. However, blockchain sharding has not yet been implemented into any popular public blockchain and it is therefore hard to evaluate its performance and security.
+
 \subsubsection{Non-persistent P2P networks}
 
 The final aspect of this chapter discusses collaborative peer-to-peer (P2P) networks that are not persistent. This means that the data on the network is not stored. It can only be accessed in real-time. 
 
-An example of such a network is Open Bazaar. Open Bazaar is a decentralized peer-to-peer marketplace. When a customer buys an item from eBay, the customer searches through listings that have been posted to the centralized servers of eBay. When searching for a specific item on Open Bazaar, a customer searches through the network of nodes that are currently online. But when a node posting a listing goes offline, this listing will no longer show up in search results \cite{openbazaar-faq}. This is why we call this a non-persistent network instead of a distributed database.
+An example of such a network is Open Bazaar. Open Bazaar is a decentralized peer-to-peer marketplace. When a customer buys an item from eBay, the customer searches through listings that have been posted to the centralized servers of eBay. When searching for a specific item on Open Bazaar, a customer searches through the network of nodes that are currently online. But when a node posting a listing goes offline, this listing will no longer show up in search results \cite{openbazaar-faq}. This is why we call this a non-persistent network instead of a distributed database. 
 
 \iffalse
 - no cap applicable, as not a database
