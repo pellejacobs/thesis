@@ -1,6 +1,10 @@
 documentation
 metadocs
 
+
+remark.min.js
+.tmp
+
 # tex output files
 *.aux
 *.idx
