@@ -255,7 +255,7 @@ renter asks the host for a proof of storage that they still hold data:
 
 Problems: 
 
-1. Denial of service attack: malicious agent keeps store large amounts of data without paying for first proof of storage
+1. Denial of service (DoS) attack: malicious agent keeps store large amounts of data without paying for first proof of storage
 
 2. Sybil attack: 
   - malicious agent pretends to be multiple different hosts
@@ -300,6 +300,26 @@ Advantages:
   ## Notary's testament services
 ]
 .right-column[
+
+
+### Purpose:
+
+Replace notary's testament service with  
+public key cryptography + blockchain + regular lawyer
+
+### What exactly:
+
+1. Signature witnessing
+
+2. Testament secret keeping
+
+### Why: 
+
+- A single trusted third party, in this case the notary, always implies a single point of failure. 
+
+- Current notary system is a government oligopoly  
+  reduced competition => worse service for higher cost
+
 ]
 
 ???
@@ -307,6 +327,46 @@ Advantages:
 This proposal is more applied than the general description of the others. 
 
 The example can however easily be projected onto other 'proof of existence' problems
+
+---
+
+
+.left-column[
+  ## On-chain storage
+  ## Distributed cloud storage
+  ## Notary's testament services
+]
+.right-column[
+### 1. Signature 
+
+1. Testator writes testament together with a regular lawyer to ensure correct wording
+2. Testator signs testament with digital signature
+3. Testator distributes signed testament among potential stakeholders
+
+### 2. Proof of existence with simple blockchain
+
+Improve security by storing a fingerprint on a public blockchain
+
+### 3. Secret keeping with Turing complete blockchain
+
+Encrypt testament and use a ÐApp to release decryption key once the testator is deceased. Several ways to write ÐApp script, eg.: 
+
+- Have multiple stakeholders vote, with a veto to the testator
+- Have the ÐApp routinely ask a governmental database whether the testator has been declared deceased 
+]
+
+???
+
+### 2. proof of existence
+
+eg. case in which after death testament is signed
+
+### 3. ÐApp script: 
+
+several aspects to take into account: 
+
+- cost: how much ether does it cost to power the script?
+- security: what is the chance that the script would fail, how to solve?
 
 ---
 
@@ -323,6 +383,13 @@ class: center, middle, inverse
 
 ---
 
+.left-column[
+  ## On-chain storage
+  ## Database timestamping
+]
+.right-column[]
+
+---
 class: center, middle, inverse
 
 # 4. Conclusion

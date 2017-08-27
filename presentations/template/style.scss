@@ -8,6 +8,10 @@ h1, h2, h3 {
   font-family: 'Yanone Kaffeesatz';
   font-weight: 400;
   margin-bottom: 0;
+  margin-top: 10px;
+}
+.remark-slide-content {
+  padding-top: 2em;
 }
 .remark-slide-content h1 { font-size: 3em; }
 .remark-slide-content h2 { font-size: 2em; }
@@ -97,7 +101,7 @@ code {
   height: 92%;
   text-align: center;
   float: left;
-  font-size: 19px;
+  font-size: 20px;
 }
 .left-column h2:last-of-type, .left-column h3:last-child {
   color: #000;
@@ -105,5 +109,4 @@ code {
 .right-column {
   width: 75%;
   float: right;
-  padding-top: 1em;
 }
