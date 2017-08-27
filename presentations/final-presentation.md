@@ -4,7 +4,7 @@ class: center, middle, inverse
 ## Feasibility of blockchain application as medium for collaborative systems or databases
 ### How to replace a previously thought indispensable middleman with technology
 
-By Pelle Jacobs, August 29th, 2017
+By Pelle Jacobs, August 29, 2017
 
 Promoted by prof. Jochen De Weerdt and supervised by Vytautas Karalevicius
 
@@ -78,10 +78,7 @@ Collaboration happens on both centralized as distributed databases
 
     + no longer one single version of the truth 
 
-        => creates interesting challenges: immutability and consensus
-
-
-  [//]: # (![distributed-vs-centralized](../images/baran_networks.png))
+  => creates interesting challenges: immutability and consensus
 ]
 
 ???
@@ -182,6 +179,10 @@ In the next two section I'll discuss proposals to cut out a middleman when deali
 
 In this section, I'll talk about how to avoid a centralized storage provider when dealing with centralized storage
 
+Example: the recipe of coca-cola, or the trading algorithm for a bank
+ 
+ =>  highly secret, only a few people can access or change it.
+
 ---
 
 .left-column[
@@ -189,7 +190,23 @@ In this section, I'll talk about how to avoid a centralized storage provider whe
 ]
 .right-column[
 Store data directly onto a blockchain, preferably a secure, public blockchain.
+
+Several problems with this approach: 
+
+1. All the disadvantages of blockchains as discussed previously: scalability, privacy, high latency, and delete functionality.
+
+  => could be issues for centralized storage applications
+
+1. Because storage capacity of blockchain is limited, storing normal-sized files is quite expensive: 
+
+  On Bitcoin blockchain: around €6.50 per KB .red[*]
+
+1. The strength of blockchain is solving the consensus and immutability issues 
+
+  => not relevant for centralized storage
 ]
+
+.footnote[.red[*] considering a transaction cost of 0.0000026 BTC per byte and a BTC market cap of €2418.09]
 
 ---
 
@@ -198,7 +215,82 @@ Store data directly onto a blockchain, preferably a secure, public blockchain.
   ## Distributed cloud storage
 ]
 .right-column[
+Instead of storing data at a single trusted storage provider (eg. Dropbox)
+ 
+=> use a network of storage providers ('hosts')
+
+Process: 
+
+1. divide data into small pieces
+1. send pieces to different hosts and duplicate for redundancy
+1. request data from hosts when necessary
+
+Problems: 
+
+- Host is not guaranteed to actually store the data
+- Host has no guarantee he will be paid by the storage renter
+
+Several implementations of same idea: Storj, Siacoin, Filecoin, IPFS, Maidsafe
 ]
+
+???
+"Where is SWARM"
+leave out swarm because they are still in early development and it is not completely clear what their exact ambition is
+
+---
+
+.left-column[
+  ## On-chain storage
+  ## Distributed cloud storage
+]
+.right-column[
+## Implementation 1: Storj
+
+Uses a pay as you go scheme: 
+renter asks the host for a proof of storage that they still hold data: 
+
+- *renter receives proof*: renter pays host for storage
+- *renter does not receive proof*: renter assumes data is gone and reduplicates
+- *host does not receive payment*: host assumes data does no longer need to be stored
+
+Problems: 
+
+1. Denial of service attack: malicious agent keeps store large amounts of data without paying for first proof of storage
+
+2. Sybil attack: 
+  - malicious agent pretends to be multiple different hosts
+  - renter stores data with him while thinking data is securely distributed
+]
+
+???
+
+"why not go further into this?"
+
+Not single focus of thesis, all very recent technologies
+
+---
+
+.left-column[
+  ## On-chain storage
+  ## Distributed cloud storage
+]
+.right-column[
+## Implementation 2: Siacoin
+
+Uses blockchain to support storage network with smart contracts:
+
+-  host puts in payment for storage
+-  renter puts in a collateral in case he cannot produce a proof of storage
+
+Extra: before being eligible to store data, hosts are required to proof their authenticity by burning coins
+
+Advantages: 
+
+- Secure against DoS attack and Sybil attack
+- Hosts' performance is publicly available and hosts can be paid accordingly
+
+]
+
 
 ---
 
@@ -223,7 +315,7 @@ class: center, middle, inverse
 # 3. Proposals for distributed storage
 ## Sections 4.4 and 4.5
 
-??? 
+???
 
 - In this final section, I'll discuss proposals on how to possibly remove a third party interaction manager when dealing with distributed storage
 
@@ -234,6 +326,22 @@ class: center, middle, inverse
 class: center, middle, inverse
 
 # 4. Conclusion
+
+---
+# 4. Conclusion
+
+- In context of collaborative storage, technology already provides several alternatives to replace trusted third parties
+
+- Adoption: 
+  - in private environments: the sky is the limit
+
+  - in public environment: already possible, only matter of time until judiciary has to decide on a precedent and blockchains are incorporated into the law
+
+- Several topics that can be further expanded on: 
+  + Distributed cloud storage: industry is under active development, eg. ICO of Filecoin on August 10.  
+    => interesting to do technical and business analysis
+
+  + Blockchain scalability: core blockchain problem to currently solve. Improving scalability = 1. cost reduction for current blockchain applications and 2. feasibility for new blockchain applications
 
 ---
 
