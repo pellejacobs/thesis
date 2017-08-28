@@ -23,6 +23,7 @@ h1, h2, h3 {
 li p { line-height: 1.25em; }
 .red { color: #fa0000; }
 .large { font-size: 2em; }
+.small { font-size: 0.75em; }
 a, a > code {
   color: rgb(249, 38, 114);
   text-decoration: none;
@@ -109,4 +110,8 @@ code {
 .right-column {
   width: 75%;
   float: right;
+}
+
+img {
+  max-width: 100%;
 }

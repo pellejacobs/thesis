@@ -24,7 +24,7 @@ start presentation with
 1. Distributed databases:
     1. Centralized vs Distributed databases
     2. Consensus and immutability issues
-    3. Blockchain as a solution
+    3. Blockchain as a solution ⛓
     4. Issues with blockchain
 
 2. Proposals for centralized storage
@@ -33,7 +33,7 @@ start presentation with
     3. Notary's testament services
 
 3. Proposals for distributed storage
-    1. On blockchain
+    1. On-chain storage
     2. Database timestamping
 
 4. Conclusion
@@ -219,13 +219,13 @@ Instead of storing data at a single trusted storage provider (eg. Dropbox)
  
 => use a network of storage providers ('hosts')
 
-Process: 
+### Process: 
 
 1. divide data into small pieces
 1. send pieces to different hosts and duplicate for redundancy
 1. request data from hosts when necessary
 
-Problems: 
+### Problems: 
 
 - Host is not guaranteed to actually store the data
 - Host has no guarantee he will be paid by the storage renter
@@ -253,7 +253,7 @@ renter asks the host for a proof of storage that they still hold data:
 - *renter does not receive proof*: renter assumes data is gone and reduplicates
 - *host does not receive payment*: host assumes data does no longer need to be stored
 
-Problems: 
+### Problems: 
 
 1. Denial of service (DoS) attack: malicious agent keeps store large amounts of data without paying for first proof of storage
 
@@ -284,7 +284,7 @@ Uses blockchain to support storage network with smart contracts:
 
 Extra: before being eligible to store data, hosts are required to proof their authenticity by burning coins
 
-Advantages: 
+### Advantages: 
 
 - Secure against DoS attack and Sybil attack
 - Hosts' performance is publicly available and hosts can be paid accordingly
@@ -307,7 +307,7 @@ Advantages:
 Replace notary's testament service with  
 public key cryptography + blockchain + regular lawyer
 
-### What exactly:
+### What is replaced:
 
 1. Signature witnessing
 
@@ -336,8 +336,9 @@ The example can however easily be projected onto other 'proof of existence' prob
   ## Distributed cloud storage
   ## Notary's testament services
 ]
+
 .right-column[
-### 1. Signature 
+### 1. Digital signature
 
 1. Testator writes testament together with a regular lawyer to ensure correct wording
 2. Testator signs testament with digital signature
@@ -349,7 +350,8 @@ Improve security by storing a fingerprint on a public blockchain
 
 ### 3. Secret keeping with Turing complete blockchain
 
-Encrypt testament and use a ÐApp to release decryption key once the testator is deceased. Several ways to write ÐApp script, eg.: 
+Encrypt testament and use a ÐApp to release decryption key once the testator is deceased.  
+Several ways to write ÐApp script, eg.: 
 
 - Have multiple stakeholders vote, with a veto to the testator
 - Have the ÐApp routinely ask a governmental database whether the testator has been declared deceased 
@@ -385,9 +387,148 @@ class: center, middle, inverse
 
 .left-column[
   ## On-chain storage
+]
+.right-column[
+
+### Characteristics of potential use cases: 
+
+1. Incentive issues between peers result in immutability and / or consensus issues
+
+2. Downsides of blockchain technology are not an issue: 
+
+  - Scalability: no large amounts of data need to be stored
+
+  - Latency: immutability is preferred over immediate consistency
+
+  - Delete functionality: not critical
+
+Often these cases require custom, private blockchain implementations, in which privacy is not a concern.
+
+]
+
+---
+
+.left-column[
+  ## On-chain storage
+]
+.right-column[
+## Example: Intercompany blacklist
+
+Industry decides to create a collective blacklist with bad clients to prevent shopping between companies   
+To avoid abuse of the blacklist, participating companies are fined if they add good clients are do not add bad clients
+
+### Incentive issue between peers?
+Companies are incentivized to tamper with the database in order to avoid fines if there is no enforced immutability
+
+### Drawbacks of blockchain?
+
+- Scalability: only a bad client identification is stored
+
+- Latency: real-time data is not necessary
+
+- Delete functionality: a bad client could be technically removed from the database when a company submits a 'vouching' transaction, vouching for this client.   
+  ⚠️ European "Right to be Forgotten"
+
+]
+
+???
+
+"How is check done?"
+
+By regular audit, taking a sample of clients and checking whether the company added them to the blacklist or not. 
+
+Eg. could authorize their independent audit companies to report to the industry committee
+
+---
+
+.left-column[
+  ## On-chain storage
+]
+.right-column[
+## Example: Intercompany blacklist (cont.)
+
+### Check: how would a centralized solution perform?
+A centralized solution would need an impartial committee to ensure the immutability of the blacklist. However:
+  
+  - human committee would be a significantly higher cost than a blockchain implementation. 
+
+  - every human committee can theoretically be corrupted  
+  => immutability is not guaranteed
+
+]
+
+---
+
+.left-column[
+  ## On-chain storage
+]
+.right-column[
+
+### Aside: "Should I use blockchain" flowcharts
+
+Most "Should I use blockchain" flowcharts are a variation on this aspect.
+
+For example, from [www.multichain.com](https://www.multichain.com):
+
+![blockchain-decision-flowchart](./images/blockchain-decision-1.png)
+.small[(G. Greenspan, "Avoiding the pointless blockchain project", 2015)]
+
+]
+
+---
+
+.left-column[
+  ## On-chain storage
   ## Database timestamping
 ]
-.right-column[]
+.right-column[
+An alternative to on-chain storage when need for larger amounts of storage or delete functionality
+
+### Process
+
+1. Every peer in the network starts with the same database
+
+2. When a peer updates his database, he propagates this change through the network
+
+3. Other peers can implement this update, or decide not to if there is a conflict with their version of the database
+
+4. Different database versions start to gradually differ
+
+5. To resolve these differences, peers come together to manually agree on a consensus
+
+6. Once consensus is achieved, a fingerprint of the new database is signed by all peers and is stored on a public blockchain  
+=> Restart from step 1
+
+
+]
+
+
+---
+
+
+.left-column[
+  ## On-chain storage
+  ## Database timestamping
+]
+.right-column[
+### Ensured immutability
+
+If there is ever a disagreement on a past version of the database: 
+
+1. the peer reconstructs the version of the database (eg. because he stored a version locally)
+
+2. if the fingerprint of this database matches the fingerprint stored on the public blockchain   
+=> has to be correct database, as all peers signed the fingerprint
+
+### Disadvantages
+
+- Costly: consensus process is a manual process that could take a while
+
+- Data cannot be changed during consensus process
+
+- Very high latency: only agreed upon data is guaranteed correct
+
+]
 
 ---
 class: center, middle, inverse
@@ -405,12 +546,20 @@ class: center, middle, inverse
   - in public environment: already possible, only matter of time until judiciary has to decide on a precedent and blockchains are incorporated into the law
 
 - Several topics that can be further expanded on: 
-  + Distributed cloud storage: industry is under active development, eg. ICO of Filecoin on August 10.  
+  + Distributed cloud storage: industry is under active development  
+  eg. ICO of Filecoin on August 10.  
     => interesting to do technical and business analysis
 
-  + Blockchain scalability: core blockchain problem to currently solve. Improving scalability = 1. cost reduction for current blockchain applications and 2. feasibility for new blockchain applications
+  + Blockchain scalability: core blockchain problem to currently solve. Improving scalability would result in:
+      1. cost reduction for current blockchain applications (=> adoption)
+      2. feasibility for new blockchain applications
+
+???
+
+Something interesting
 
 ---
+count: false
 
 class: center, middle, inverse
 
@@ -427,6 +576,7 @@ but often the problem interaction problem is solved by creating a central author
 => eg. Github authority for git: only one version of the data that is valid 
 
 ---
+count: false
 
 class: center, middle, inverse
 
