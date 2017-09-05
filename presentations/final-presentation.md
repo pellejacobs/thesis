@@ -6,16 +6,17 @@ class: center, middle, inverse
 
 By Pelle Jacobs, August 29, 2017
 
-Promoted by prof. Jochen De Weerdt and supervised by Vytautas Karalevicius
+Supervised by prof. Jochen De Weerdt and Vytautas Karalevicius
 
 ???
 
-Main research question of my master thesis "How can the idea to replace a middleman with technology be applied to collaborative databases?" 
-
-Or, paraphrased, how can we store collaborative data without the need for a trusted third party? 
+<!-- Main research question of my master thesis "How can the idea to replace a middleman with technology be applied to collaborative databases?" 
+ -->
+  
+Main idea: how can we store collaborative data without the need for a trusted third party? 
 
 start presentation with 
-    $ bs serve
+    `$ bs serve`
 
 ---
 
@@ -41,6 +42,14 @@ start presentation with
 ???
 The proposals from my final chapter will be the focus of this presentation. 
 
+I'll start out by going through some theoretical content on databases
+
+I have a lot of slides, so I'll go through them quite quickly
+
+If you have any questions related to what's a slide, just interrupt me
+
+
+<!-- 
 - I cherry picked the content from the prior research chapter with this in mind: what is absolutely necessary to evaluate the proposals
 
 - For example, I left out the entire section on public key cryptography, the technicalities of blockchain technology and the less relevant distributed database parts (CAP, git, bittorrent, etc) 
@@ -50,7 +59,7 @@ I also split the proposals for collaborative storage into two sections:
 - proposals for centralized storage without a third party storage provider 
 
 - proposals for distributed storage without a third party interaction manager
-
+ -->
 ---
 
 class: center, middle, inverse
@@ -136,7 +145,7 @@ Blockchain technology solves both problems quite well:
 
     - Only works for sure with more than 50% of the network
 
-    - If only 25% is controller, only 0.1% chance an attacker would succeed in catching up to 15 blocks.
+    - If only 25% is controlled, only 0.1% chance an attacker would succeed in catching up to 15 blocks.
 
     => Although an attack is theoretically possible, it is very unlikely this would be economically profitable for the attacker, considering the required resources
 ]
@@ -255,7 +264,7 @@ renter asks the host for a proof of storage that they still hold data:
 
 ### Problems: 
 
-1. Denial of service (DoS) attack: malicious agent keeps store large amounts of data without paying for first proof of storage
+1. Denial of service (DoS) attack: malicious renter stores large amounts of data without paying for first proof of storage
 
 2. Sybil attack: 
   - malicious agent pretends to be multiple different hosts
@@ -279,8 +288,8 @@ Not single focus of thesis, all very recent technologies
 
 Uses blockchain to support storage network with smart contracts:
 
--  host puts in payment for storage
--  renter puts in a collateral in case he cannot produce a proof of storage
+-  renter puts in payment for storage
+-  host puts in a collateral in case he cannot produce a proof of storage
 
 Extra: before being eligible to store data, hosts are required to proof their authenticity by burning coins
 
